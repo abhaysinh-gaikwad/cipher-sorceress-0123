@@ -45,12 +45,13 @@ body {
   transform: translate(0%);
   transition: 0.7s;
   opacity: 1;
-  transition-delay: calc(0.1s * var(--D));
+  transition-delay: calc(0.1s * var(--S));
 }
 
 .container.active .form-box.Login .animation {
   transform: translateX(-120%);
   opacity: 0;
+  transition-delay: calc(0.1s * var(--D));
 }
 
 .form-box.Register {
@@ -63,6 +64,8 @@ body {
   transform: translate(120%);
   transition: 0.7s ease;
   opacity: 0;
+  filter: blur(0);
+  transition-delay: calc(0.1s * var(--S));
 }
 
 .container.active .form-box.Register .animation {
@@ -199,31 +202,38 @@ body {
 .info-content.Login .animation {
   transform: translateX(0);
   transition: 0.7s ease;
-
-  transition-delay: calc(0.1s * var(--D));
+  transition-delay: calc(0.1s * var(--S));
+  opacity: 1;
+  filter: blur(0px);
 }
 
 .container.active .info-content.Login .animation {
   transform: translateX(120%);
   opacity: 0;
+  filter: blur(10px);
+  transition-delay: calc(0.1s * var(--D));
 }
 
 .info-content.Register {
   left: 0;
   text-align: left;
-  padding: 0 150px 60px 39px;
+  padding: 0 150px 60px 40px;
   pointer-events: none;
 }
 
 .info-content.Register .animation {
   transform: translateX(-120%);
   transition: 0.7s ease;
-  transition-delay: calc(0.1s * var(--D));
+  opacity: 0;
+  filter: blur(10px);
+  transition-delay: calc(0.1s * var(--S));
 }
 
 .container.active .info-content.Register .animation {
-  transform: translateX(120%);
-  opacity: 0;
+  transform: translateX(0%);
+  opacity: 1;
+  filter: blur(0);
+  transition-delay: calc(0.1s * var(--li));
 }
 
 .info-content h2 {
@@ -245,11 +255,13 @@ body {
   background: linear-gradient(45deg, #25252b, #ff2770);
   transform: rotate(10deg) skewY(40deg);
   transform-origin: bottom right;
-  transition: 1.5s;
+  transition: 1.5s ease;
+  transition-delay: 1.6s;
 }
 
 .container.active .curved-shape {
   transform: rotate(0deg) skewY(0deg);
+  transition-delay: 0.5s;
 }
 
 .container .curved-shape2 {
@@ -263,6 +275,7 @@ body {
   transform: rotate(0deg) skewY(0deg);
   transform-origin: bottom left;
   transition: 1.5s;
+  transition-delay: 0.5s;
 }
 
 .container.active .curved-shape2 {
