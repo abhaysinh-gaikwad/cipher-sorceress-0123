@@ -1,0 +1,40 @@
+#profile-name{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#name{
+    margin-top: 190px;
+    margin-bottom: 10px;
+}
+
+#username{
+    margin-bottom: 9px;
+}
+#profilepic{
+    margin-top: 30px;
+}
+
+#features-pens button{
+    color: rgb(168, 156, 156);
+    background-color:  rgb(45, 43, 43);
+}
+
+#pen-buttons button{
+    color: rgb(168, 156, 156);
+    background-color:  rgb(45, 43, 43);
+}
+
+.comment-symbol {
+    font-family: 'Material Symbols Outlined', sans-serif;
+}
+
+#features-pens a{
+   font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
