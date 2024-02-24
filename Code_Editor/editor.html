@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+    
+    <div class="cont1">
+        <div class="HCJ-col">
+
+            <label>HTML</label>
+            <textarea id="HTML-code" onkeyup="run()"></textarea>
+
+            <label>CSS</label>
+            <textarea id="CSS-code" onkeyup="run()"></textarea>
+
+            <label>JavaScript</label>
+            <textarea id="JS-code" onkeyup="run()"></textarea>
+
+        </div>
+        <div class="live-output-area">
+            <label>OUTPUT</label>
+            <iframe id="live-output"></iframe>
+        </div>
+    </div>
+
+</body>
+    <script src="editor.js"></script>
+</html>
