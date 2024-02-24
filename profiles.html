@@ -16,7 +16,7 @@
                     <li><a href="calender.html"><img style="height: 30px; width: 30px; margin-left: 20px; margin-top: 20px;" src="https://blog.codepen.io/wp-content/uploads/2023/09/logo-black.png" alt="logo"></a></li>
                     <li class = "drop">
                         <a style="height: 30px; width: 50px; margin-left: 15px;" href="#"></a> dropdown</a> 
-                       <ul>
+                       <!-- <ul>
                         <li><a href="pen.html">pen</a></li>
                        <li><a href="#">your work</a></li>
                        <li><a href="activity.html">activity</a></li>
@@ -24,7 +24,7 @@
                        <li><a href="#">pinned items</a></li>
                        <li><a href="#">trending</a></li>
                        <li><a href="#">challenges</a></li>
-                       </ul>
+                       </ul> -->
                     </li>
                     <li><input style=" height: 25px; width: 700px;" type="text" autocomplete="raja" placeholder="Search Code Collab..."></li>
                     <li><button style="height: 30px; width: 50px;" id="pinned">
@@ -47,11 +47,13 @@
             </div>
       </div>
       
-      <div style="margin-top: 160px;" id="main-box-pen" class="main-box-pen">
+      <div style="margin-top: 160px;" id="main-box" class="main-box">
+
         <div style= "display: flex; flex-direction: row; gap :2.5%; margin-top: 20px; background-color: rgb(45, 43, 43); padding: 2px; " id="pen-buttons">
             <button id="pens">Pens</button>
             <button id="collections">Collections</button>
           </div>
+
           <div style= "display: flex; flex-direction: row; gap :2.5%; margin-top: 20px; background-color: rgb(45, 43, 43); padding: 2px; " id="features-pens">
             <a style="color: white;" href=""id="showcase">Showcase </a>  
             <a style="color: white;" href=""id="popular">popular </a>  
@@ -62,7 +64,8 @@
             <a style="color: white;" href="" id="loved">Loved</a> 
             <a style="color: white;" href="" id="tags">tags</a>  
             </div>
-        <div style="background-color: rgb(157, 152, 152);" class="background-enclose">
+        </div>
+        <!-- <div style="background-color: rgb(157, 152, 152);" class="background-enclose">
             <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin-top: 20px;  width: 100%;" id="writing-big">
                 <a href="pen.html"  id="big-code-page"></a>
             </div>
@@ -80,9 +83,17 @@
                         visibility
                     </span></button>
             </div>
-        </div>
+        </div> -->
+      
+
+      <div style="margin-top: 160px; display: flex;" id="main-box-pen" class="main-box-pen">
+              <!-- Pens container -->
       </div>
-      <div style= "margin-top: 20px; margin-left: 70px;  display: grid; grid-template-columns: repeat(2,2fr);" id="smallboxes">
+
+     <div id="pagination-container" style="margin-top: 20px;"></div>
+
+      <button><a href="index.html">click here</a></button>
+      <!-- <div style= "margin-top: 20px; margin-left: 70px;  display: grid; grid-template-columns: repeat(2,2fr);" id="smallboxes">
         <div style=" width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
             <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin: 15px;  width: 90%;" id="writing-big">
                 <a href="pen.html"  id="big-code-page"></a>
@@ -101,8 +112,8 @@
                         visibility
                     </span></button>
             </div>
-        </div>
-        <div style="width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
+        </div> -->
+        <!-- <div style="width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
             <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin: 15px;  width: 90%;" class="writing-big">
                 <a href="pen.html"  id="big-code-page"></a>
             </div>
@@ -120,8 +131,8 @@
                         visibility
                     </span></button>
             </div>
-        </div>
-        <div style=" margin-top:15px; width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
+        </div> -->
+        <!-- <div style=" margin-top:15px; width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
             <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin: 15px;  width: 90%;" class="writing-big">
                 <a href="pen.html"  id="big-code-page"></a>
             </div>
@@ -139,8 +150,8 @@
                         visibility
                     </span></button>
             </div>
-        </div>
-        <div style=" margin-top:15px; width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
+        </div> -->
+        <!-- <div style=" margin-top:15px; width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
             <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin: 15px;  width: 90%;"class="writing-big">
                 <a href="pen.html"  id="big-code-page"></a>
             </div>
@@ -158,8 +169,8 @@
                         visibility
                     </span></button>
             </div>
-        </div>
-        <div style=" margin-top:15px; width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
+        </div> -->
+        <!-- <div style=" margin-top:15px; width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
             <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin: 15px;  width: 90%;" class="writing-big">
                 <a href="pen.html"  id="big-code-page"></a>
             </div>
@@ -177,8 +188,8 @@
                         visibility
                     </span></button>
             </div>
-        </div>
-        <div style=" margin-top:15px; width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
+        </div> -->
+        <!-- <div style=" margin-top:15px; width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
             <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin: 15px;  width: 90%;"class="writing-big">
                 <a href="pen.html"  id="big-code-page"></a>
             </div>
@@ -196,8 +207,7 @@
                         visibility
                     </span></button>
             </div>
-        </div>
-    </div>
+        </div> -->
    <footer id="code-footer">
       <div id="codepen-feature">
         <h3 style="color:white">CodePen</h3>
@@ -214,4 +224,5 @@
 
    </footer>
 </body>
+   <script src="script.js"></script>
 </html>

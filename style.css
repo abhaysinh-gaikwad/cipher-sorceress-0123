@@ -36,5 +36,9 @@
 
 #features-pens a{
    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
+.main-box-pen{
+    display: flex;
+    flex-direction: row;
 }
