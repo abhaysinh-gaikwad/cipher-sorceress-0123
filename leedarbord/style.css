@@ -80,8 +80,6 @@ h1 {
 .users > div:hover {
   color: #ff2770;
   cursor: pointer;
-  width: 60%;
-  height: 60px;
   font-size: 32px;
   background-color: white;
   border: 1px solid #ff2770;
