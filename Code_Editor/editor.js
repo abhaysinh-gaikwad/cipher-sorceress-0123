@@ -12,6 +12,7 @@ function run(){
 
 
 
+
 let saveBtn = document.getElementById("save-btn");
 let htmlCode = document.getElementById("HTML-code")
 let cssCode = document.getElementById("CSS-code")
@@ -23,15 +24,18 @@ async function saveCode(){
        const obj = {
            htmlcode: htmlCode.value,
            csscode: cssCode.value,
-           jscode: jsCode.value 
+           jscode: jsCode.value,
        }
        console.log(obj);
        const res = await fetch("http://localhost:4000/code",{
            method:"POST",
            headers:{
-               "Content-Type":"application/json"
+               "Content-Type":"application/json",
+               authorization :`Bearer ${localStorage.getItem("token")}`
            },
+        
            body:JSON.stringify(obj)
+           
        })
        const data = await res.json(); 
        console.log(data)
