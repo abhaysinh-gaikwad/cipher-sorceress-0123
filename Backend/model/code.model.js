@@ -13,7 +13,7 @@ const codeSchema = mongoose.Schema({
         type:String,
     },
     userId:{
-        type:String,
+        type:mongoose.Schema.ObjectId,
         required:true,
     },
     author:{
