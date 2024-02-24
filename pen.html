@@ -1,0 +1,72 @@
+<!-- pen.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+  <style>a {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+</style>
+
+</head>
+
+<body>
+    <div style="display: flex; gap: 10%; margin: 300px;" class="code-editor">
+        <div id="programs">
+            <div class="editor-pane">
+                <textarea id="html-editor" placeholder="HTML"></textarea>
+            </div>
+            <div class="editor-pane">
+                <textarea id="css-editor" placeholder="CSS"></textarea>
+            </div>
+            <div class="editor-pane">
+                <textarea id="js-editor" placeholder="JavaScript"></textarea>
+            </div>
+        </div>
+       
+        <div class="output-pane">
+            <iframe id="output"></iframe>
+        </div>
+    </div>
+    <a href="profiles.html">Back to Profile</a>
+
+</body>
+<script>
+   // pen.html
+   function createPen() {
+
+    var htmlEditor = document.getElementById('html-editor');
+    var cssEditor = document.getElementById('css-editor');
+    var jsEditor = document.getElementById('js-editor');
+
+    // Load saved code from localStorage
+    htmlEditor.value = localStorage.getItem('htmlCode') || '';
+    cssEditor.value = localStorage.getItem('cssCode') || '';
+    jsEditor.value = localStorage.getItem('jsCode') || '';
+
+    // Save code to localStorage on change
+    htmlEditor.addEventListener('input', function() {
+        localStorage.setItem('htmlCode', htmlEditor.value);
+    });
+    cssEditor.addEventListener('input', function() {
+        localStorage.setItem('cssCode', cssEditor.value);
+    });
+    jsEditor.addEventListener('input', function() {
+        localStorage.setItem('jsCode', jsEditor.value);
+    });
+
+   }
+    </script>
+</html>

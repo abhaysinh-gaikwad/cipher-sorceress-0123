@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto|Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>profile</title>
+</head>
+<body>
+      <header class="search-profile" id="header">
+            <nav  id="nav-bar">
+                <ul style="display: flex; gap: 4%; flex-direction: row;" >
+                    <li><a href="calender.html"><img style="height: 30px; width: 30px; margin-left: 20px; margin-top: 20px;" src="https://blog.codepen.io/wp-content/uploads/2023/09/logo-black.png" alt="logo"></a></li>
+                    <li class = "drop">
+                        <a style="height: 30px; width: 50px; margin-left: 15px;" href="#"></a> dropdown</a> 
+                       <!-- <ul>
+                        <li><a href="pen.html">pen</a></li>
+                       <li><a href="#">your work</a></li>
+                       <li><a href="activity.html">activity</a></li>
+                       <li><a href="#">assets</a></li>
+                       <li><a href="#">pinned items</a></li>
+                       <li><a href="#">trending</a></li>
+                       <li><a href="#">challenges</a></li>
+                       </ul> -->
+                    </li>
+                    <li><input style=" height: 25px; width: 700px;" type="text" autocomplete="raja" placeholder="Search Code Collab..."></li>
+                    <li><button style="height: 30px; width: 50px;" id="pinned">
+                        pinned</button></li>
+                    <li> <button style="height: 30px; width: 50px;" id="pinned">
+                        dropdown links</button></li>
+                </ul>
+            </nav>
+      </header>
+
+      <div style="background-color: rgb(51, 49, 49); height: 300px;" id="big-box-header">
+            <div id="profile-name">
+                <h1 id="name" style="text-align: center;" >Rajasekhar Korada</h1>
+                <!-- insert profile name from dom-->
+                <p id="username" style="text-align: center;" >@rajcodeshtml</p>
+                     <!-- insert username from dom-->
+                <div style="max-height: 100%; max-width: 100%; " id="profilepic">
+                      <img style="height: 200px; width:200px;"  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="default=image">
+                </div>
+            </div>
+      </div>
+      
+      <div style="margin-top: 160px;" id="main-box" class="main-box">
+
+        <div style= "display: flex; flex-direction: row; gap :2.5%; margin-top: 20px; background-color: rgb(45, 43, 43); padding: 2px; " id="pen-buttons">
+            <button id="pens">Pens</button>
+            <button id="collections">Collections</button>
+          </div>
+
+          <div style= "display: flex; flex-direction: row; gap :2.5%; margin-top: 20px; background-color: rgb(45, 43, 43); padding: 2px; " id="features-pens">
+            <a style="color: white;" href=""id="showcase">Showcase </a>  
+            <a style="color: white;" href=""id="popular">popular </a>  
+            <a style="color: white;" href="" id="public">Public </a> 
+            <a style="color: white;" href=""id="private">private </a>  
+            <a style="color: white;" href="" id="templates">Templates </a> 
+            <a style="color: white;" href=""id="forked">Forked </a>  
+            <a style="color: white;" href="" id="loved">Loved</a> 
+            <a style="color: white;" href="" id="tags">tags</a>  
+            </div>
+        </div>
+        <!-- <div style="background-color: rgb(157, 152, 152);" class="background-enclose">
+            <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin-top: 20px;  width: 100%;" id="writing-big">
+                <a href="pen.html"  id="big-code-page"></a>
+            </div>
+            <div style="margin-left: 10px;" id="problem-id">
+                <h3 id="DOM">
+                    DOM-1 Problem
+                </h3>
+                <button><span class="material-symbols-outlined">
+                    favorite
+                    </span></button>
+                <button><span class="material-symbols-outlined">
+                    comment
+                    </span></button>
+                    <button><span class="material-symbols-outlined">
+                        visibility
+                    </span></button>
+            </div>
+        </div> -->
+      
+
+      <div style="margin-top: 160px; display: flex;" id="main-box-pen" class="main-box-pen">
+              <!-- Pens container -->
+      </div>
+
+     <div id="pagination-container" style="margin-top: 20px;"></div>
+
+      <button><a href="index.html">click here</a></button>
+      <!-- <div style= "margin-top: 20px; margin-left: 70px;  display: grid; grid-template-columns: repeat(2,2fr);" id="smallboxes">
+        <div style=" width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
+            <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin: 15px;  width: 90%;" id="writing-big">
+                <a href="pen.html"  id="big-code-page"></a>
+            </div>
+            <div style="margin-left: 10px;" id="problem-id">
+                <h3 id="DOM">
+                    DOM-1 Problem
+                </h3>
+                <button><span class="material-symbols-outlined">
+                    favorite
+                    </span></button>
+                <button><span class="material-symbols-outlined">
+                    comment
+                    </span></button>
+                    <button><span class="material-symbols-outlined">
+                        visibility
+                    </span></button>
+            </div>
+        </div> -->
+        <!-- <div style="width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
+            <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin: 15px;  width: 90%;" class="writing-big">
+                <a href="pen.html"  id="big-code-page"></a>
+            </div>
+            <div style="margin-left: 10px;" id="problem-id">
+                <h3 id="DOM">
+                    DOM-1 Problem
+                </h3>
+                <button><span class="material-symbols-outlined">
+                    favorite
+                    </span></button>
+                <button><span class="material-symbols-outlined">
+                    comment
+                    </span></button>
+                    <button><span class="material-symbols-outlined">
+                        visibility
+                    </span></button>
+            </div>
+        </div> -->
+        <!-- <div style=" margin-top:15px; width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
+            <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin: 15px;  width: 90%;" class="writing-big">
+                <a href="pen.html"  id="big-code-page"></a>
+            </div>
+            <div style="margin-left: 10px;" id="problem-id">
+                <h3 id="DOM">
+                    DOM-1 Problem
+                </h3>
+                <button><span class="material-symbols-outlined">
+                    favorite
+                    </span></button>
+                <button><span class="material-symbols-outlined">
+                    comment
+                    </span></button>
+                    <button><span class="material-symbols-outlined">
+                        visibility
+                    </span></button>
+            </div>
+        </div> -->
+        <!-- <div style=" margin-top:15px; width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
+            <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin: 15px;  width: 90%;"class="writing-big">
+                <a href="pen.html"  id="big-code-page"></a>
+            </div>
+            <div style="margin-left: 10px;" id="problem-id">
+                <h3 id="DOM">
+                    DOM-1 Problem
+                </h3>
+                <button><span class="material-symbols-outlined">
+                    favorite
+                    </span></button>
+                <button><span class="material-symbols-outlined">
+                    comment
+                    </span></button>
+                    <button><span class="material-symbols-outlined">
+                        visibility
+                    </span></button>
+            </div>
+        </div> -->
+        <!-- <div style=" margin-top:15px; width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
+            <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin: 15px;  width: 90%;" class="writing-big">
+                <a href="pen.html"  id="big-code-page"></a>
+            </div>
+            <div style="margin-left: 10px;" id="problem-id">
+                <h3 id="DOM">
+                    DOM-1 Problem
+                </h3>
+                <button><span class="material-symbols-outlined">
+                    favorite
+                    </span></button>
+                <button><span class="material-symbols-outlined">
+                    comment
+                    </span></button>
+                    <button><span class="material-symbols-outlined">
+                        visibility
+                    </span></button>
+            </div>
+        </div> -->
+        <!-- <div style=" margin-top:15px; width:80%; background-color: rgb(157, 152, 152);" class="background-enclose">
+            <div style="background-color: white; border: solid black 1px; border-radius: 6px; height: 200px; margin: 15px;  width: 90%;"class="writing-big">
+                <a href="pen.html"  id="big-code-page"></a>
+            </div>
+            <div style="margin-left: 10px;" id="problem-id">
+                <h3 id="DOM">
+                    DOM-1 Problem
+                </h3>
+                <button><span class="material-symbols-outlined">
+                    favorite
+                    </span></button>
+                <button><span class="material-symbols-outlined">
+                    comment
+                    </span></button>
+                    <button><span class="material-symbols-outlined">
+                        visibility
+                    </span></button>
+            </div>
+        </div> -->
+   <footer id="code-footer">
+      <div id="codepen-feature">
+        <h3 style="color:white">CodePen</h3>
+      </div>
+      <div id="codepen-for">
+        <h3 style="color:white">CodePen</h3>
+      </div>
+      <div id="codepen-social">
+        <h3 style="color:white">CodePen</h3>
+      </div>
+      <div id="codepen-community">
+        <h3 style="color:white" >CodePen</h3>
+      </div>
+
+   </footer>
+</body>
+   <script src="script.js"></script>
+</html>
