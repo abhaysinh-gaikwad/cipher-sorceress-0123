@@ -7,29 +7,6 @@ logo.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", function() {
   // Check if the user is logged in
-  const isLoggedIn = localStorage.getItem("username") !== null;
-
-  // Select the element with class "register" which contains the login link
-  const loginLink = document.querySelector(".register a");
-
-  const login = loginLink.textContent;
-
-
-  if (isLoggedIn === login) {
-      // Get the username from localStorage
-      loginLink.addEventListener("click", () => {
-        window.location.href = "../newProfile_page/profile.html";
-        
-      })
-  } else {
-    
-  }
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  // Check if the user is logged in
   const isLoggedIn = localStorage.getItem("token") !== null;
 
   // Select the element with class "register" which contains the login link
@@ -46,8 +23,15 @@ document.addEventListener("DOMContentLoaded", function() {
           // If the username doesn't exist, keep the text as "Login"
           loginLink.textContent = "Login";
       }
+
+      // Redirect user to profile page when clicking on username button
+      loginLink.addEventListener("click", (event) => {
+          event.preventDefault(); // Prevent default anchor tag behavior
+          window.location.href = "../newProfile_page/profile.html";
+      });
   } else {
       // If the user is not logged in, keep the text as "Login"
       loginLink.textContent = "Login";
   }
 });
+
