@@ -31,16 +31,16 @@ userRouter.post('/register', async(req,res) =>{
             if(hash){
                 const user =new UserModel({userName,email,pass:hash})
                 await user.save()
-                res.send({msg:'new user has benn register'})
+               return  res.status(200).send({msg:'new user has benn register'})
             }else{
                 console.log(err)
-                res.send({msg:'error in password hashing process',err:err})
+                 return res.status(404).send({msg:'error in password hashing process',err:err})
             }
         })
 
     }catch(err){
         console.log(err)
-        res.send({msg:"error in user registration",err})
+        res.status(404).send({msg:"error in user registration",err})
     }
 })
 
@@ -59,14 +59,15 @@ userRouter.post('/login', async(req,res) =>{
         bcrypt.compare(pass,user.pass, (err,result) =>{
             if(result){
                 const token = jwt.sign({userId:user._id,author:user.userName},process.env.tokenSecretKey,{expiresIn:'7d'})
-                res.send({msg:'login successfully',token,username: user.userName})
+                res.status(200).send({msg:'login successfully',token,username: user.userName})
             }else{
                 return res.status(401).send({ error: "Wrong password." });
             }
         })
 
     }catch(err){
-        res.send({msg:"error in user login",errors:err})
+        console.log(err);
+        res.status(404).send({msg:"error in user login",errors:err})
 
     }
 })
