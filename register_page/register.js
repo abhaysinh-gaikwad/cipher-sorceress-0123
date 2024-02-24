@@ -22,34 +22,6 @@ logo.addEventListener("click", ()=>{
 })
 
 
-// signup js
-
-// const handleRegistration =() =>{
-//     let userName =document.getElementById("userName").value
-//     let email =document.getElementById("email").value
-//     let pass =document.getElementById("pass").value
-//     const payload ={
-//         userName,
-//         email,
-//         pass
-//     }
-//     console.log(payload)
-
-//     fetch("http://localhost:4000/users/register",{
-//         method:"POST",
-//         headers:{
-//             "Content-type":"application/json"
-//         },
-//         body:JSON.stringify(payload)
-//     }).then(res =>res.json())
-//     .then(data =>console.log(data))
-//     .catch(err => console.log(err))
-
-//     setTimeout(()=>{
-//     window.location.href ="register.html"
-//    },3000)
-
-// }
 
 
 const handleRegistration = async () => {
