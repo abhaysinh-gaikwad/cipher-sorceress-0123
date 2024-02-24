@@ -384,3 +384,84 @@ nav {
   background: transparent;
   border: 1px solid #ff2770;
 }
+
+
+/* Popup styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+  background-color: #f8f9fa; /* Light gray background */
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow */
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #333; /* Dark gray */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#loginSuccessMessage {
+  font-size: 18px;
+  color: #333; /* Dark gray text */
+}
+
+/* Animation for the popup */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  to {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+}
+
+.modal {
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  animation: fadeIn 0.3s;
+}
+
+.modal-content .close {
+  animation: fadeOut 0.3s;
+}
+
+
