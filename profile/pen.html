@@ -14,7 +14,6 @@
             color: blue;
             text-decoration: none;
         }
-
         a:hover {
             text-decoration: underline;
         }
@@ -34,6 +33,9 @@
             <div class="editor-pane">
                 <textarea id="js-editor" placeholder="JavaScript"></textarea>
             </div>
+           <button id="save-btn">
+                save 
+           </button>
         </div>
        
         <div class="output-pane">
@@ -45,28 +47,28 @@
 </body>
 <script>
    // pen.html
-   function createPen() {
+   document.getElementById("save-btn").addEventListener("click", function () {
 
-    var htmlEditor = document.getElementById('html-editor');
-    var cssEditor = document.getElementById('css-editor');
-    var jsEditor = document.getElementById('js-editor');
+    var htmlEditor = document.getElementById('html-editor').value;
+    var cssEditor = document.getElementById('css-editor').value;
+    var jsEditor = document.getElementById('js-editor').value;
 
     // Load saved code from localStorage
-    htmlEditor.value = localStorage.getItem('htmlCode') || '';
-    cssEditor.value = localStorage.getItem('cssCode') || '';
-    jsEditor.value = localStorage.getItem('jsCode') || '';
+   
 
-    // Save code to localStorage on change
-    htmlEditor.addEventListener('input', function() {
-        localStorage.setItem('htmlCode', htmlEditor.value);
-    });
-    cssEditor.addEventListener('input', function() {
-        localStorage.setItem('cssCode', cssEditor.value);
-    });
-    jsEditor.addEventListener('input', function() {
-        localStorage.setItem('jsCode', jsEditor.value);
-    });
+    // Create a pen object
+    const pen = {
+        html: htmlEditor,
+        css: cssEditor,
+        js: jsEditor
+    };
 
-   }
+    let pens = JSON.parse(localStorage.getItem("pens")) || [];
+
+    pens.push(pen);
+
+    localStorage.setItem("pens", JSON.stringify(pens));
+});
+
     </script>
 </html>

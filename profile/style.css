@@ -1,0 +1,168 @@
+body {
+     background-color: antiquewhite;
+}
+
+#features-pens a{
+     text-decoration: none;
+     border: 1px solid red;
+     padding: 10px;
+      
+}
+     
+#pinned {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  #pinned:hover {
+    background-color: #45a049; /* darker shade of green on hover */
+    transform: scale(1.1); 
+  }
+
+  .custom-li {
+    background-color: antiquewhite;
+    border: 1px solid blue;
+    padding: 10px;
+    height: 20px;
+    width: 40px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.custom-li img {
+    height: 30px;
+    width: 30px;
+}
+
+
+
+#profile-name{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#name{
+    margin-top: 190px;
+    margin-bottom: 10px;
+}
+
+#username{
+    margin-bottom: 9px;
+}
+#profilepic{
+    margin-top: 30px;
+}
+
+#features-pens button{
+    color: rgb(168, 156, 156);
+    background-color:  rgb(45, 43, 43);
+}
+
+#pen-buttons button{
+    color: rgb(168, 156, 156);
+    background-color:  rgb(45, 43, 43);
+}
+
+.comment-symbol {
+    font-family: 'Material Symbols Outlined', sans-serif;
+}
+
+.white-pen{
+    transition: transform 0.3s, background-color 0.3s; /* Add transition for transform and background-color */
+    background-color: white;
+
+}
+.white-pen:hover {
+    background-color: lightgray; /* Change background color on hover */
+    transform: scale(1.05); /* Apply a slight scale transformation on hover for bulging effect */
+  }
+.background-enclose{
+   background-color: black;
+   width: 600px;
+   height: 400px;
+   margin: -30px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  transition: background-color 0.3s; /* Add background color animation */
+}
+.background-enclose:hover {
+    background-color: darkslategray;
+    background-image: linear-gradient(to right bottom, rgb(51, 40, 40), rgb(204, 179, 179)); /* Add gradient background on hover */  }
+
+#features-pens a{
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.buttons-like {
+    padding: 5px 10px;
+    margin-right: 20px; /* Add space between buttons */
+    background-color: #f2f2f2;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+  }
+  
+  .buttons-like:hover {
+    background-color: #ddd; /* Change background color on hover */
+  }
+  
+  .material-symbols-outlined {
+    font-size: 16px;
+    margin-right: 5px; /* Add space between icon and text */
+  }
+  
+
+#big-code-page{
+    color: white;
+    margin-left: 3px;
+    padding: 10px 30px;
+}
+
+#main-box-pen{
+       
+     margin-left: 100px;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     column-gap: 60px; /* Add horizontal gap between grid items */
+    row-gap: 50px;
+}
+#html-editor{
+    color: black;
+    margin-left: 30px;
+     
+}
+#css-editor{
+    color: black;
+    margin-left: 30px;
+     
+}
+#js-editor{
+    color: black;
+    margin-left: 30px;
+     
+}
+
+#code-footer div a {
+   color: black;
+   text-decoration: none;
+
+}
+#code-footer div a:hover {
+   
+  color: rgb(193, 178, 178);
+}

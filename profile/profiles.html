@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto|Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>profile</title>
+</head>
+<body>
+      <header class="search-profile" id="header">
+            <nav id="nav-bar">
+                <ul style="display: flex; gap: 10%; flex-direction: row; justify-content: center;" >
+                    <li class = "custom-li" ><a href="calender.html"><img src="https://blog.codepen.io/wp-content/uploads/2023/09/logo-black.png" alt="logo"></a></li>
+                   
+                    <li><button id="pinned">
+                        <span>dropdown links</span></button></li>
+                </ul>
+            </nav>
+      </header>
+
+      <div style="background-color:brown ; height: 300px;" id="big-box-header">
+            <div id="profile-name">
+                <h1 id="name" style="text-align: center;" >Rajasekhar Korada</h1>
+                <!-- insert profile name from dom-->
+                <p id="username" style="text-align: center;" >@rajcodeshtml</p>
+                     <!-- insert username from dom-->
+                <div style="max-height: 100%; max-width: 100%;" id="profilepic">
+                      <img style="height: 200px; width:200px;"  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="default=image">
+                </div>
+            </div>
+      </div>
+      
+      <div style="margin-top: 160px;" id="main-box" class="main-box">
+
+        <div style= "display: flex; flex-direction: row; gap :2.5%; margin-top: 20px; background-color: rgb(45, 43, 43); padding: 12px; width: 56vw; margin-left: auto; margin-right: auto;" id="pen-buttons">
+            <button style="color: white;" id="pens">Pens</button>
+            <button id="collections">Collections</button>
+          </div>
+
+          <div style= "display: flex; flex-direction: row; gap :2.5%; margin-top: 20px; background-color: rgb(45, 43, 43); padding: 12px;width: 56vw; margin-left: auto; margin-right: auto; " id="features-pens">
+            <a style="color: white;" href=""id="showcase">Showcase </a>  
+            <a style="color: white;" href=""id="popular">popular </a>  
+            <a style="color: white;" href=""id="public">Public </a> 
+            <a style="color: white;" href=""id="private">private </a>  
+            <a style="color: white;" href="" id="templates">Templates </a> 
+            <a style="color: white;" href=""id="forked">Forked </a>  
+            <a style="color: white;" href="" id="loved">Loved</a> 
+            <a style="color: white;" href="" id="tags">tags</a>  
+            </div>
+        </div>
+
+      <div style="margin-top: 160px; " id="main-box-pen" class="main-box-pen">
+              <!-- Pens container -->
+      </div>
+
+     <div id="pagination-container" style="margin-top: 20px;"></div>
+
+       
+   <footer style="margin-top: 30px; margin-left: 200px;" id="code-footer">
+        <div style="display: flex; align-items: center; gap: 2%;" id="codepen-feature">
+            <p style="color:white">CodePen</p>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Podcast</a>
+            <a href="#">Documentation</a>
+            <a href="#">Support</a>
+            <a href="#">Advertise</a>
+        </div>
+      
+        <div style="display: flex; align-items: center; gap: 2%;" id="codepen-for">
+            <p style="color:white">For</p>
+            <a href="#">Teams</a>
+            <a href="#">Education</a>
+            <a href="#">Privacy</a>
+            <a href="#">Embeds</a>
+            <a href="#">Asset Hosting</a>
+        </div>
+     
+        <div id="codepen-social" style="display: flex; align-items: center; gap: 2%;" >
+            <p style="color:white">Social</p>
+            <a href="#">Youtube</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">Mastodon</a>
+        </div>
+   
+        <div  style="display: flex; align-items: center; gap: 2%; "id="codepen-community">
+            <p style="color:white" >Community</p>
+            <a href="#">Spark</a>
+            <a href="#">challenges</a>
+            <a href="#">Topics</a>
+            <a href="#">Code of Conduct</a>
+        </div>
+   </footer>
+</body>
+   <script src="script.js"></script>
+</html>

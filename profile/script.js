@@ -1,35 +1,29 @@
+let pens = JSON.parse(localStorage.getItem("pens")) || [];
 
-window.addEventListener('DOMContentLoaded', function() {
-    var urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('createPen')) {
-        createPen();
-    }
+const mainBoxPen = document.getElementById("main-box-pen");
+
+pens.forEach((pen, index) => {
+    var penCard = createPenCard(pen.html, pen.css, pen.js);
+    mainBoxPen.appendChild(penCard);
 });
-
-function createPen() {
-    var pensContainer = document.getElementById('main-box-pen');
-
-    var htmlCode = localStorage.getItem('htmlCode') || '';
-    var cssCode = localStorage.getItem('cssCode') || '';
-    var jsCode = localStorage.getItem('jsCode') || '';
-
-    var penCard = createPenCard(htmlCode, cssCode, jsCode);
-    pensContainer.appendChild(penCard);
-}
 
 function createPenCard(htmlCode, cssCode, jsCode) {
 
     var penDiv = document.createElement('div');
     penDiv.className = 'background-enclose';
-    penDiv.style.backgroundColor = 'rgb(154, 152, 152)';
-    penDiv.style.width = '400%';
+    penDiv.style.marginTop = '-50px';
+    penDiv.style.borderRadius = '12px';
+    penDiv.style.marginLeft = 'auto';
+    penDiv.style.marginTop = 'auto';
+
 
     var innerDiv = document.createElement('div');
-    innerDiv.style.backgroundColor = 'white';
+    innerDiv.className = "white-pen";
     innerDiv.style.border = 'solid black 1px';
     innerDiv.style.borderRadius = '6px';
-    innerDiv.style.margin = '15px';
-    innerDiv.style.width = '90%';
+    innerDiv.style.width = '420px';
+    innerDiv.style.height = '220px';
+     innerDiv.style.marginLeft = '40px';
 
     // HTML box
     var htmlBox = document.createElement('div');
@@ -65,27 +59,26 @@ function createPenCard(htmlCode, cssCode, jsCode) {
     var anchor = document.createElement('a');
     anchor.href = 'pen.html'; 
     anchor.id = 'big-code-page';
-    anchor.textContent = 'Open Pen';
-
-    var penLink = document.createElement('a');
-    penLink.href = 'pen.html'; 
-    penLink.appendChild(penDiv);
-
+    anchor.appendChild(innerDiv);
     // Append the anchor tag to penDiv
     penDiv.appendChild(anchor);
 
     var problemDiv = document.createElement('div');
     problemDiv.style.marginLeft = '10px';
+    problemDiv.style.color = 'white';
+    problemDiv.style.textDecoration = 'none';
 
     var heading = document.createElement('h3');
     heading.textContent = 'DOM-1 Problem';
-
     problemDiv.appendChild(heading);
 
     var buttons = ['favorite', 'comment', 'visibility'];
 
     buttons.forEach(function(btnText) {
         var button = document.createElement('button');
+        button.classList.add('buttons-like');
+        button.textContent = '0';
+        button.style.marginLeft = '3px';
         var span = document.createElement('span');
         span.className = 'material-symbols-outlined';
         span.textContent = btnText;
@@ -94,13 +87,11 @@ function createPenCard(htmlCode, cssCode, jsCode) {
     });
 
     penDiv.appendChild(problemDiv);
-    return penLink;
+    return penDiv;
 }
 
 
-function createMorePens() {
-    for (var i = 0; i < 6; i++) {
-        createPen();
-    }
+function createMultiplePens() {
+    
+    createPenCard();
 }
-
