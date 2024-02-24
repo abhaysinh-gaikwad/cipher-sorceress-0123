@@ -142,12 +142,9 @@ function showLoginSuccessPopup(username) {
 
 
 const handleLogin = async () => {
-    let email = document.getElementById("Email").value;
-    let pass = document.getElementById("password").value;
-    const payload = {
-        email,
-        pass
-    };
+    const email = document.getElementById("Email").value;
+    const pass = document.getElementById("password").value;
+    const payload = { email, pass };
 
     try {
         const response = await fetch('http://localhost:4000/users/login', {
@@ -158,25 +155,28 @@ const handleLogin = async () => {
             body: JSON.stringify(payload)
         });
         
-        if (!response.ok) {
-            throw new Error("Login failed");
-        }
-
         const data = await response.json();
-        console.log(data);
 
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("username", data.username);
-        // alert("Login successful. Welcome " + data.username); 
-        const username = data.username; // Replace with actual username retrieved from response
-         showLoginSuccessPopup(username);
-
-        // Redirect to index.html after 3 seconds
-        setTimeout(() => {
-            window.location.href = "../home_page/index.html";
-        }, 3000);
+        if (response.ok) {
+            // Successful login
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("username", data.username);
+            showLoginSuccessPopup(data.username);
+            setTimeout(() => {
+                window.location.href = "../home_page/index.html";
+            }, 3000);
+        } else {
+            // Failed login
+            if (response.status === 400) {
+                alert(data.msg); // Display error message from server
+            } else if (response.status === 401) {
+                alert("Wrong password."); // Incorrect password
+            } else {
+                alert("Login failed. Please try again."); // Other errors
+            }
+        }
     } catch (error) {
-        console.log(error);
-        alert("Login failed. Please check your credentials.");
+        console.error(error);
+        alert("An error occurred while processing your request.");
     }
 };
