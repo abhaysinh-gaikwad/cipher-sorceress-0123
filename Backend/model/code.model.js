@@ -13,8 +13,8 @@ const codeSchema = mongoose.Schema({
         type:String,
     },
     userId:{
-        type:String,
-        required:true,
+        type: mongoose.Schema.ObjectId, 
+        required: true
     },
     author:{
         type:String,
