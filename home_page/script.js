@@ -7,6 +7,29 @@ logo.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", function() {
   // Check if the user is logged in
+  const isLoggedIn = localStorage.getItem("username") !== null;
+
+  // Select the element with class "register" which contains the login link
+  const loginLink = document.querySelector(".register a");
+
+  const login = loginLink.textContent;
+
+
+  if (isLoggedIn === login) {
+      // Get the username from localStorage
+      loginLink.addEventListener("click", () => {
+        window.location.href = "../newProfile_page/profile.html";
+        
+      })
+  } else {
+    
+  }
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Check if the user is logged in
   const isLoggedIn = localStorage.getItem("token") !== null;
 
   // Select the element with class "register" which contains the login link

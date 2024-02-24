@@ -57,6 +57,17 @@ codeRouter.delete('/:id', auth, async(req,res) =>{
     }
 })
 
+codeRouter.get('/allCodes', async(req,res) =>{
+    try{
+        const code =await CodeEditor.find();
+        res.status(200).send({msg:'all code',code});
+    }
+    catch(err){
+        console.log(err)
+        res.status(400).send({msg:"error in code added",err});
+    }
+});
+
 
 module.exports = {
     codeRouter
