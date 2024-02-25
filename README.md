@@ -52,14 +52,14 @@ Provide user credentials for autheticated pages
 
 ## API Endpoints
 In case of Backend Applications provide a list of your API endpoints, methods, brief descriptions, and examples of request/response.
--POST /api/users/register - create a new user
--GET /api/users/checkEmail - retrive all users
--POST /api/users/login - user can login
--GET /api/users/logout - user can logout
--POST /api/code/ - create a new code
--GET /api/code/ - retrive all codes
--PATCH /api/code/id - update the code
--DELETE /api/code/id - delete the code
+- POST /api/users/register - create a new user
+- GET /api/users/checkEmail - retrive all users
+- POST /api/users/login - user can login
+- GET /api/users/logout - user can logout
+- POST /api/code/ - create a new code
+- GET /api/code/ - retrive all codes
+- PATCH /api/code/id - update the code
+- DELETE /api/code/id - delete the code
 
 
 
