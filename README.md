@@ -34,7 +34,7 @@ Features
 Detailed instructions on how to install, configure, and get the project running. For BE/FS projects, guide the reviewer how to check mongodb schema etc.
 
 ```bash
-npm install Backend
+npm install 
 cd Backend
 npm run start
 ```
