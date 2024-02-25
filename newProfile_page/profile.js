@@ -71,58 +71,58 @@ typingbtn.addEventListener('click', () => {
 })
 
 
-//footer js
-// Toggle the visibility of the contact form
-function toggleContactForm() {
-  const contactForm = document.querySelector('.contact-form');
-  contactForm.classList.toggle('show');
-}
+document.addEventListener('DOMContentLoaded', async () => {
+  const userId = localStorage.getItem('userId');
+  const response = await fetch(`http://localhost:4000/code?userId=${userId}`);
+  const codeData = await response.json();
 
-// Validate and submit the contact form
-function submitContactForm() {
-  const nameInput = document.getElementById('name');
-  const emailInput = document.getElementById('email');
-  const messageInput = document.getElementById('message');
+  const codeContainer = document.querySelector('.card');
+  codeContainer.innerHTML = ''; // Clear existing code cards
 
-  // Basic validation
-  if (nameInput.value.trim() === '' || emailInput.value.trim() === '' || messageInput.value.trim() === '') {
-      alert('Please fill in all fields.');
-      return;
-  }
-
-  // You can add additional validation logic here
-
-  // Example: Sending form data to a backend endpoint using fetch
-  const formData = {
-      name: nameInput.value.trim(),
-      email: emailInput.value.trim(),
-      message: messageInput.value.trim()
-  };
-
-  fetch('https://example.com/submit-contact-form', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-  })
-  .then(response => {
-      if (response.ok) {
-          alert('Form submitted successfully!');
-          // Reset form fields
-          nameInput.value = '';
-          emailInput.value = '';
-          messageInput.value = '';
-      } else {
-          throw new Error('Failed to submit form.');
-      }
-  })
-  .catch(error => {
-      console.error('Error:', error);
-      alert('Failed to submit form. Please try again later.');
+  codeData.forEach(code => {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      card.innerHTML = `
+          <h2>${code.title}</h2>
+          <p>${code.content}</p>
+          <div class="card-actions">
+              <button class="edit-btn" data-id="${code._id}">Edit</button>
+              <button class="delete-btn" data-id="${code._id}">Delete</button>
+          </div>
+      `;
+      codeContainer.appendChild(card);
   });
-}
 
-// Event listeners
-document.querySelector('.toggle-contact-form').addEventListener('click', toggleContactForm);
-document.querySelector('.submit-contact-form').addEventListener('click', submitContactForm);
+  // Logout button click handler
+  document.getElementById('logoutbtn').addEventListener('click', () => {
+      localStorage.clear();
+      window.location.href = '../home_page/index.html';
+  });
+
+  // Edit button click handler
+  document.querySelectorAll('.edit-btn').forEach(button => {
+      button.addEventListener('click', () => {
+          const codeId = button.dataset.id;
+          localStorage.setItem('editCodeId', codeId);
+          window.location.href = '../codeeditor.html';
+      });
+  });
+
+  // Delete button click handler
+  document.querySelectorAll('.delete-btn').forEach(button => {
+      button.addEventListener('click', async () => {
+          const codeId = button.dataset.id;
+          const confirmation = confirm('Are you sure you want to delete this code?');
+          if (confirmation) {
+              await fetch(`http://localhost:4000/code/${codeId}`, {
+                  method: 'DELETE',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ userId })
+              });
+              window.location.reload();
+          }
+      });
+  });
+});

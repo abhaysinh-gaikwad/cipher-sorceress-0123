@@ -59,7 +59,7 @@ userRouter.post('/login', async(req,res) =>{
         bcrypt.compare(pass,user.pass, (err,result) =>{
             if(result){
                 const token = jwt.sign({userId:user._id,author:user.userName},process.env.tokenSecretKey,{expiresIn:'7d'})
-                res.status(200).send({msg:'login successfully',token,username: user.userName})
+                res.status(200).send({msg:'login successfully',token,username: user.userName,userId:user._id})
             }else{
                 return res.status(401).send({ error: "Wrong password." });
             }

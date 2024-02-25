@@ -129,6 +129,7 @@ const handleLogin = async () => {
             // Successful login
             localStorage.setItem("token", data.token);
             localStorage.setItem("username", data.username);
+            localStorage.setItem("userId", data.userId);
             showLoginSuccessPopup(data.username);
             setTimeout(() => {
                 window.location.href = "../home_page/index.html";
