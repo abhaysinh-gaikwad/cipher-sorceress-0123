@@ -6,7 +6,6 @@ var typed = new Typed('.text', {
   loop:true
 });
 
-
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const response = await fetch('http://localhost:4000/code/top-users');
