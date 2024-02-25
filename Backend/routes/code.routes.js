@@ -6,9 +6,9 @@ const codeRouter =express.Router();
 
 
 codeRouter.post('/', auth, async(req,res) =>{
-    const {htmlcode,csscode,jscode,userId,author} =req.body;
+    const {filename, htmlcode,csscode,jscode,userId,author,} =req.body;
     try{
-        const code =new CodeEditor({htmlcode,csscode,jscode,userId,author});
+        const code =new CodeEditor({filename, htmlcode,csscode,jscode,userId,author});
         await code.save()
         res.status(200).send({msg:'new code has benn added'})
     }catch(err){

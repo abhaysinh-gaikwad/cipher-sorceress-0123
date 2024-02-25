@@ -26,10 +26,11 @@ let saveBtn = document.getElementById("save-btn");
 let htmlCode = document.getElementById("HTML-code");
 let cssCode = document.getElementById("CSS-code");
 let jsCode = document.getElementById("JS-code");
-
+let saveasInput = document.getElementById("saveasInput");
 async function saveCode() {
   try {
     const obj = {
+      filename: saveasInput.value,
       htmlcode: htmlCode.value,
       csscode: cssCode.value,
       jscode: jsCode.value,
@@ -38,12 +39,17 @@ async function saveCode() {
     if (!localStorage.getItem("token")) {
       //   alert("Please login first");
       // Assuming a toast function is already defined or a library like toastr is being used.
-      toast("Please login first", { type: "error", duration: 3000 });
-      setTimeout(() => {
-        window.location.href = "../register_page/register.html";
-      }, 5000);     
-    }else{
-      toast("Your code has been saved", { type: "success", duration: 3000 });
+        toast("Please login first", { type: "error", duration: 3000 });
+        setTimeout(() => {
+          window.location.href = "../register_page/register.html";
+        }, 5000);
+    } else {
+      if(saveasInput.value==""){
+        toast("Please enter a filename", { type: "error", duration: 3000 });
+      }else{
+
+        toast("Your code has been saved", { type: "success", duration: 3000 });
+      }
     }
     const res = await fetch("http://localhost:4000/code", {
       method: "POST",
