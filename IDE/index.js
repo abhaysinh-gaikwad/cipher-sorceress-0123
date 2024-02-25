@@ -3,24 +3,37 @@ const bodyParser = require("body-parser");
 const compiler = require("compilex");
 const options = { stats: true }
 const cors = require("cors");
+
+
 compiler.init(options)
 
 const app = express();
 
 
 app.use(express.json());
+
 app.use(cors());
 app.use(bodyParser.json());
 
 
 app.use("/codemirror-5.65.16", express.static( __dirname + "/codemirror-5.65.16"));
 
+app.use(bodyParser.json());
+
+
+app.use("/codemirror-5.65.16", express.static("C:/Users/Rajat/Desktop/Code Editor/IDE(Main)/codemirror-5.65.16"))
+
+
 
 app.get("/", function (req,res){
     compiler.flush(function () {
         console.log("running")
     })
+
     res.sendFile(__dirname + "/index.html");
+
+    res.sendFile("C:/Users/Rajat/Desktop/Code Editor/IDE(Main)/index.html")
+
 })
 
 
