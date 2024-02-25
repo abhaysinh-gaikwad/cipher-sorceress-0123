@@ -1,20 +1,28 @@
-let pens = JSON.parse(localStorage.getItem("pens")) || [];
 
 const mainBoxPen = document.getElementById("main-box-pen");
 
-pens.forEach((pen, index) => {
-    var penCard = createPenCard(pen.html, pen.css, pen.js);
-    mainBoxPen.appendChild(penCard);
-});
+fetch('http://localhost:4000/code')
+    .then(response => response.json())
+    .then(data => {
+        clearCodeCards();
 
-function createPenCard(htmlCode, cssCode, jsCode) {
+        data.forEach(code => {
+            // Create 
+            var card = createPenCard(code);
+
+            mainBoxPen.appendChild(card);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+
+function createPenCard(data) {
 
     var penDiv = document.createElement('div');
     penDiv.className = 'background-enclose';
     penDiv.style.marginTop = '-50px';
     penDiv.style.borderRadius = '12px';
-    penDiv.style.marginLeft = 'auto';
-    penDiv.style.marginTop = 'auto';
 
 
     var innerDiv = document.createElement('div');
@@ -30,7 +38,7 @@ function createPenCard(htmlCode, cssCode, jsCode) {
     htmlBox.className = 'code-editor';
     var htmlPre = document.createElement('pre');
     htmlPre.id = 'html-editor';
-    htmlPre.textContent = htmlCode;
+    htmlPre.textContent = data.htmlcode;;
     htmlBox.appendChild(htmlPre);
 
     // CSS box
@@ -38,29 +46,27 @@ function createPenCard(htmlCode, cssCode, jsCode) {
     cssBox.className = 'code-editor';
     var cssPre = document.createElement('pre');
     cssPre.id = 'css-editor';
-    cssPre.textContent = cssCode;
+    cssPre.textContent = data.csscode;
     cssBox.appendChild(cssPre);
 
     var jsBox = document.createElement('div');
     jsBox.className = 'code-editor';
     var jsPre = document.createElement('pre');
     jsPre.id = 'js-editor';
-    jsPre.textContent = jsCode;
+    jsPre.textContent = data.jscode;
     jsBox.appendChild(jsPre);
 
-    // Append HTML, CSS, and JavaScript boxes to innerDiv
     innerDiv.appendChild(htmlBox);
     innerDiv.appendChild(cssBox);
     innerDiv.appendChild(jsBox);
 
-    // Append innerDiv to penDiv
     penDiv.appendChild(innerDiv);
 
     var anchor = document.createElement('a');
     anchor.href = 'pen.html'; 
     anchor.id = 'big-code-page';
     anchor.appendChild(innerDiv);
-    // Append the anchor tag to penDiv
+
     penDiv.appendChild(anchor);
 
     var problemDiv = document.createElement('div');
@@ -92,6 +98,46 @@ function createPenCard(htmlCode, cssCode, jsCode) {
 
 
 function createMultiplePens() {
-    
     createPenCard();
 }
+
+
+
+document.getElementById('search-button').addEventListener('click', handleSearch);
+
+function handleSearch(){
+     const searchTerm = document.getElementById('search-bar').value.trim();
+
+     clearCodeCards();
+
+     fetch(`http://localhost:4000/code?username=${searchTerm}`)  
+     .then(response => response.json())
+     .then(data => {
+        data.forEach(code => {
+            const card = document.createElement('div');
+            card.classList.add('code-card');
+
+            const htmlcode = document.createElement('pre');
+            htmlcode.textContent = `HTML:\n${code.htmlcode}`;
+            card.appendChild(htmlcode);
+
+            const cssCode = document.createElement('pre');
+            cssCode.textContent = `CSS:\n${code.csscode}`;
+            card.appendChild(cssCode);
+    
+            const jsCode = document.createElement('pre');
+            jsCode.textContent = `JavaScript:\n${code.jscode}`;
+            card.appendChild(jsCode); 
+
+            mainBoxPen.appendChild(card);
+
+        });
+     })
+     .catch(error => {
+        console.error('Error fetching data:',error);
+     })
+ }
+
+        function clearCodeCards(){
+            mainBoxPen.innerHTML = "";
+        }
