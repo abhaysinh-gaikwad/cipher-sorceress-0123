@@ -1,7 +1,7 @@
 const fetchbtn = document.getElementById("fetchbtn");
 const logoutbtn = document.getElementById("logoutbtn");
 const logoutuser = document.getElementById("logout");
-const typingbtn =document.getElementById("typingbtn");
+
 
 logoutuser.addEventListener("click", (e) => {
   e.preventDefault();
@@ -39,90 +39,94 @@ async function logout() {
   }
 }
 
-logoutbtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  logout();
-});
-
-
-const fetchcodes = () => {
+const fetchCodes = () => {
   fetch("http://localhost:4000/code", {
     headers: {
       "Content-type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Authorization": `Bearer ${localStorage.getItem("token")}`,
     },
   })
     .then((res) => res.json())
     .then((data) => {
-      // displayNotes(data.notes);
       console.log(data);
+      appendProducts(data.code);
     })
     .catch((err) => console.log(err));
 };
 
-fetchbtn.addEventListener("click", () => {
-  fetchcodes();
-});
+fetchCodes();
 
-
-
-typingbtn.addEventListener('click', () => {
-  window.location.href ="../typing_speed/typing.html";
-})
-
-
-//footer js
-// Toggle the visibility of the contact form
-function toggleContactForm() {
-  const contactForm = document.querySelector('.contact-form');
-  contactForm.classList.toggle('show');
-}
-
-// Validate and submit the contact form
-function submitContactForm() {
-  const nameInput = document.getElementById('name');
-  const emailInput = document.getElementById('email');
-  const messageInput = document.getElementById('message');
-
-  // Basic validation
-  if (nameInput.value.trim() === '' || emailInput.value.trim() === '' || messageInput.value.trim() === '') {
-      alert('Please fill in all fields.');
-      return;
-  }
-
-  // You can add additional validation logic here
-
-  // Example: Sending form data to a backend endpoint using fetch
-  const formData = {
-      name: nameInput.value.trim(),
-      email: emailInput.value.trim(),
-      message: messageInput.value.trim()
-  };
-
-  fetch('https://example.com/submit-contact-form', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-  })
-  .then(response => {
-      if (response.ok) {
-          alert('Form submitted successfully!');
-          // Reset form fields
-          nameInput.value = '';
-          emailInput.value = '';
-          messageInput.value = '';
-      } else {
-          throw new Error('Failed to submit form.');
-      }
-  })
-  .catch(error => {
-      console.error('Error:', error);
-      alert('Failed to submit form. Please try again later.');
+function appendProducts(products) {
+  let cardContainer = document.getElementById("card-container");
+  cardContainer.innerHTML = ""; // Clear previous cards
+  
+  products.forEach((product, index) => {
+    let card = createCard(product, index + 1); // Add 1 to index for 1-based numbering
+    cardContainer.appendChild(card);
   });
 }
 
-// Event listeners
-document.querySelector('.toggle-contact-form').addEventListener('click', toggleContactForm);
-document.querySelector('.submit-contact-form').addEventListener('click', submitContactForm);
+function createCard(product, index) {
+  const card = document.createElement('div');
+  card.classList.add('card');
+
+  // const img = document.createElement('img');
+ 
+  // if (product.imageUrl) {
+  //   img.src = product.imageUrl;
+  //   img.alt = product.name;
+  // } else {
+  //   img.src = 'placeholder_image_url.jpg'; 
+  //   img.alt = 'Placeholder Image';
+  // }
+
+  const title = document.createElement('h2');
+  title.textContent = `Pen ${index}`; // Set title as "Pen 1", "Pen 2", and so on
+
+  const htmlCode = document.createElement('p');
+  htmlCode.textContent = product.htmlcode;
+
+  const cssCode = document.createElement('p');
+  cssCode.textContent = product.csscode;
+
+  const jsCode = document.createElement('p');
+  jsCode.textContent = product.jscode;
+
+  const buttonEdit = document.createElement("button");
+  buttonEdit.className = "button";
+  buttonEdit.innerText = "Edit";
+  buttonEdit.addEventListener("click", () => {
+    // Redirect to edit page with the code ID or any necessary details
+    window.location.href = `../Code_Editor/editor.html`;
+  });
+
+  const buttonDelete = document.createElement("button");
+  buttonDelete.className = "button";
+  buttonDelete.innerText = "Delete";
+  buttonDelete.addEventListener("click", () => {
+    // Call function to delete code by ID
+    deleteCode(product._id);
+  });
+
+  card.append( title,buttonEdit, buttonDelete);
+
+  return card;
+}
+
+function deleteCode(codeId){
+
+  fetch(`http://localhost:4000/code/${codeId}`, {
+    method: 'DELETE',
+    headers: {
+        "Content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("token")}`
+    }
+})
+.then(res => res.json())
+.then(data => {
+    alert(data.msg);
+    fetchCodes(); // Refresh notes after deletion
+})
+.catch(err => console.log(err));
+}
+
