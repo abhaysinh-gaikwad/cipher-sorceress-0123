@@ -13,7 +13,7 @@
         crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./codemirror-5.65.16/lib/codemirror.css">
-    <script src="./codemirror-5.65.16/mode/python/python.js"></script>
+    <!-- <script src="./codemirror-5.65.16/mode/python/python.js"></script> -->
 
     <script src="./codemirror-5.65.16/lib/codemirror.js"></script>
     <script src="./codemirror-5.65.16/mode/clike/clike.js"></script>
@@ -41,7 +41,7 @@
                     <button type="button" class="btn btn-success" style="background-color: #ff2770; border: none;">Home</button>
                 </div>
             </div>
-            <textarea type="text" id="editor" class="form-control" aria-label="First name"></textarea>
+            <textarea type="text" id="editor" class="form-control" ></textarea>
         </div>
         
     </div>
@@ -57,10 +57,8 @@
     </div>
 </body>
 <script>
-
-
-    let editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
-
+    
+    let editor = new CodeMirror.fromTextArea(document.getElementById("editor"), {
         mode: "text/x-c++src",
         theme: "3024-night",
         lineNumbers: true,
@@ -70,7 +68,6 @@
     let input = document.getElementById("input")
     let output = document.getElementById("output")
     let run = document.getElementById("run")
-    // editor.setSize(1 * width, "500")
     let option = document.getElementById("inlineFormSelectPref")
     option.addEventListener("change", function () {
         if (option.value == "Java") {
@@ -91,7 +88,7 @@
             lang: option.value
         }
         console.log(code)
-        let oData = await fetch("https://ide-backendserver.onrender.com/compile", {
+        let oData = await fetch("http://localhost:8000/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

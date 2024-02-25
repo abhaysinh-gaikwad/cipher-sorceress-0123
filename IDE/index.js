@@ -1,39 +1,30 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const compiler = require("compilex");
-const options = { stats: true }
 const cors = require("cors");
-
-
+const options = { stats: true }
 compiler.init(options)
 
 const app = express();
 
-
-// app.use(express.json());
-
+app.use(express.json());
+app.use(bodyParser.json());
 app.use(cors());
-app.use(bodyParser.json());
 
 
-app.use("/codemirror-5.65.16", express.static( __dirname + "/codemirror-5.65.16"));
 
-app.use(bodyParser.json());
-
-
+app.use("/codemirror-5.65.16", express.static(__dirname + "/codemirror-5.65.16"))
 
 
 app.get("/", function (req,res){
     compiler.flush(function () {
         console.log("running")
     })
-
     res.sendFile(__dirname + "/index.html");
-
 })
 
 
-app.post("/compile", function (req, res) {
+app.post("/", function (req, res) {
     let code = req.body.code
     let input = req.body.input
     let lang = req.body.lang
