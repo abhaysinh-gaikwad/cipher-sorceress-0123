@@ -1,7 +1,7 @@
 const express = require('express');
 const {CodeEditor} =require('../model/code.model');
+const {UserModel} =require('../model/user.model')
 const {auth} =require('../middleware/auth.middleware')
-const{UserModel}=require("../model/user.model")
 const codeRouter =express.Router();
 
 
@@ -71,47 +71,23 @@ codeRouter.get('/allCodes', async(req,res) =>{
 });
 
 
-codeRouter.get('/sortedByCodeCount', async (req, res) => {
+
+codeRouter.get('/top-users', async (req, res) => {
     try {
-        const usersWithCodeCount = await CodeEditor.aggregate([
-            {
-                $group: {
-                    _id: "$userId", // Group by user ID
-                    count: { $sum: 1 } // Count the number of codes for each user
-                }
-            },
-            {
-                $lookup: {
-                    from: "users", // Name of the code collection
-                    localField: "userId", // Field in the user collection
-                    foreignField: "_id", // Field in the code collection
-                    as: "users" // Name for the field that will contain the joined code documents
-                   
-                }
-            },
-            {
-                $addFields: {
-                    codeCount:  "$count",
-                    users: {
-                        $map: {
-                            input: "$users",
-                            as: "user",
-                            in: {
-                                userName: "$user.userName", // Get userName from userDetails
-                                email: "$user.email" // Get email from userDetails
-                            }
-                        }
-                    }
-                }
-            },
-            {
-                $sort: { codeCount: -1 } // Sort users based on the number of codes they created in descending order
-            }
+        const topUsers = await CodeEditor.aggregate([
+            { $group: { _id: "$userId", count: { $sum: 1 } } },
+            { $sort: { count: -1 } },
+            { $limit: 10 },
+            { $lookup: { from: "users", localField: "_id", foreignField: "_id", as: "userData" } },
+            { $unwind:"$userData" },
+            { $project: { _id: 0, userId: "$_id", userName: "$userData.userName", email: "$userData.email", count: 1 } }
         ]);
-        res.status(200).json(usersWithCodeCount);
+
+        res.json(topUsers);
     } catch (error) {
-        console.error('Error retrieving users sorted by code count:', error);
-        res.status(500).send('Internal Server Error');
+        console.error(error);
+        res.status(500).json({ error: 'Internal server error' });
+
     }
 });
 

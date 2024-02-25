@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Collab</title>
+    <link rel="stylesheet" href="../register_page/register.css" />
+    <style>
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 20px;
+        margin: 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="../home_page/index.html"></a>
+          Code-Collab
+        </div>
+        <div class="menu">
+          <a href="../home_page/index.html">Home</a>
+          <a href="../home_page/index.html#about">About</a>
+          <a href="../leedarbord/index.html">Leadbord</a>
+        </div>
+        <div class="register">
+          <a href="../home_page/index.html" id="logout">Logout</a>
+        </div>
+      </nav>
+    </header>
+
+    <button id="logoutbtn">Logout</button>
+    <button id="homebtn">
+      <a href="../home_page/index.html">Home page</a>
+    </button>
+
+    <div class="card">
+      <h2>Card Heading</h2>
+      <div class="card-actions">
+        <button type="button" onclick="editCard()">Edit</button>
+        <button type="button" onclick="deleteCard()">Delete</button>
+        <button id="fetchbtn">fetchData</button>
+      </div>
+    </div>
+  </body>
+
+  <script src="profile.js"></script>
+</html>
