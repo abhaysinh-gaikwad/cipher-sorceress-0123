@@ -101,7 +101,11 @@ function createCard(product, index) {
 
   buttonEdit.addEventListener("click", () => {
     // Redirect to edit page with the code ID or any necessary details
-
+    console.log(product);
+    localStorage.setItem("htmlcode", product.htmlcode);
+    localStorage.setItem("csscode", product.csscode);
+    localStorage.setItem("jscode", product.jscode);
+    localStorage.setItem("filename", product.filename);
     window.location.href = `../Code_Editor/editor.html`;
   });
 
