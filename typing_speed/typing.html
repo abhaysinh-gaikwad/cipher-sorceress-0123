@@ -1,81 +1,174 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="This Speed Typing Test will give you an acuurate speed test and help increase your typing speed"/>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="This Speed Typing Test will give you an acuurate speed test and help increase your typing speed"
+    />
 
-    <title>Typing Test</title>
+    <title>Code-Collab</title>
 
     <!-- <link rel="icon" href="favicon.ico"> -->
-
+    <link rel="shortcut icon" href="../Images/logo.png" type="image/x-icon" />
     <!--Bootstrap 4 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="./typing.css">
+    <link rel="stylesheet" href="./typing.css" />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Source+Code+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Source+Code+Pro:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
-    <div class="container-fluid box ">
-      <div class="top">
-          <h1 id="heading" class = "yellow">Typing Speed Test</h1>
-          <div class="limits-box">
-            <div class="limit">
-              <a id="thirty" class="yellow"  href="#" >30s</a>
-              <a id="sixty"  href="#" >60s</a>
-            </div>
-            <div class="limit">
-              <a id="beg" class="yellow"  href="#" >beginner</a>
-              <a id="pro"  href="#" >pro</a>
-            </div>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="../home_page/index.html">
+            <img src="../Images/logo.png" />
+          </a>
+          Code-Collab
+        </div>
+        <div class="menu">
+          <a href="../home_page/index.html">Home</a>
+          <a href="../home_page/index.html#about">About</a>
+          <a href="../Code_Editor/editor.html">CodeEditor</a>
+          <a href="../IDE_FrontEnd/idefrontend.html">IDE</a>
+          <a href="../leaderboard/index.html">Leaderboard</a>
+        </div>
+        <div class="register">
+          <a href="../register_page/register.html">Login</a>
+        </div>
+      </nav>
+    </header>
 
+    <div class="container-fluid box">
+      <div class="top">
+        <h1 id="heading" class="yellow">Typing Speed Test</h1>
+        <div class="limits-box">
+          <div class="limit">
+            <a id="thirty" class="yellow" href="#">30s</a>
+            <a id="sixty" href="#">60s</a>
           </div>
+          <div class="limit">
+            <a id="beg" class="yellow" href="#">beginner</a>
+            <a id="pro" href="#">pro</a>
+          </div>
+        </div>
       </div>
 
       <div class="stats center">
         <div class="stat-block if">
-          <div id="timeName" class = "stat-name yellow if">Time</div>
-          <div id="time" class="details if ">30</div>
+          <div id="timeName" class="stat-name yellow if">Time</div>
+          <div id="time" class="details if">30</div>
         </div>
 
         <div class="stat-block if">
-          <div id="cwName" class = "stat-name yellow if">CW</div>
+          <div id="cwName" class="stat-name yellow if">CW</div>
           <div id="cw" class="details if">0</div>
         </div>
       </div>
 
-
-      <div class="text-display" id="textDisplay">
-
-      </div>
+      <div class="text-display" id="textDisplay"></div>
 
       <div class="input-area center">
-        <textarea rows="1" class="text-input" id="textInput" autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+        <textarea
+          rows="1"
+          class="text-input"
+          id="textInput"
+          autofocus
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+        ></textarea>
       </div>
 
-      <div  class="restart-button center">
-        <a id="restartBtn" class = "current" href="#">
+      <div class="restart-button center">
+        <a id="restartBtn" class="current" href="#">
           <i class="fas fa-redo"></i>
         </a>
       </div>
-
-      
     </div>
 
-
-
-
+    <footer>
+      <div class="top_header">
+        <section>
+          <span><i class="fa fa-map-marker"></i></span>
+          <span
+            >Incubex HSR21, 5th Main Rd, Sector 6, HSR Layout Bengaluru,
+            Karnataka - 560068, Bengaluru, Karnataka 560034</span
+          >
+        </section>
+        <section>
+          <span><i class="fa fa-phone"></i></span>
+          <span>(+91) 9898 9898</span>
+        </section>
+        <section>
+          <span><i class="fa fa-envelope"></i></span>
+          <span>codecollab@gmail.com</span>
+        </section>
+      </div>
+      <span class="border-shape"></span>
+      <div class="bottom_content">
+        <section>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-telegram"></i></a>
+        </section>
+        <section class="footeratags">
+          <a href="../home_page/index.html">Home</a>
+          <a href="../home_page/index.html#about">About us</a>
+          <a href="../Code_Editor/editor.html">Code Editor</a>
+          <a href="../home_page/index.html#about">Member</a>
+          <a href="#">Contact Us</a>
+        </section>
+      </div>
+      <div class="copyright">
+        Copyright © 2024 codecollab team - All rights reserved
+      </div>
+    </footer>
 
     <!-- Bootstrap script -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- My Javascript -->
     <script src="./typing.js"></script>

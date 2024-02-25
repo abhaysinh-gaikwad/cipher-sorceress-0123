@@ -3,14 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Code-Collab</title>
+    <link rel="shortcut icon" href="../Images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="editor.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../leaderboard/style.css">
 </head>
 <body>
-    
+    <header>
+        <nav>
+          <div class="logo">
+            <a href="../home_page/index.html">
+              <img src="../Images/logo.png">
+            </a>
+            Code-Collab
+          </div>
+          <div class="menu">
+            <a href="../home_page/index.html">Home</a>
+            <a href="../home_page/index.html#about">About</a>
+            <a href="../Code_Editor/editor.html">CodeEditor</a>
+            <a href="../IDE_FrontEnd/idefrontend.html">IDE</a>
+            <a href="../leaderboard/index.html">Leaderboard</a>
+          </div>
+          <div class="register">
+            <!-- <a id="save-btn" >Save</a> -->
+             <button id="save-btn">Save</button>
+             <button id="profile-btn">Profile</button>
+          </div>
+        </nav>
+      </header>
+    <!-- <button id="save-btn">Save</button> -->
     <div class="cont1">
         <div class="HCJ-col">
-
+            <div id="toast-container"></div>
             <label>HTML</label>
             <textarea id="HTML-code" onkeyup="run()"></textarea>
 
@@ -22,12 +50,49 @@
 
         </div>
         <div class="live-output-area">
+            <input type="text" id="saveasInput" placeholder="Enter your file name">
             <label>OUTPUT</label>
             <iframe id="live-output"></iframe>
         </div>
     </div>
 
-    <button id="save-btn">save</button>
+    <footer>
+        <div class="top_header">
+        <section>
+        <span><i class="fa fa-map-marker"></i></span>
+        <span>Incubex HSR21, 5th Main Rd, Sector 6, HSR Layout Bengaluru, Karnataka - 560068, Bengaluru, Karnataka 560034</span>
+        </section>
+        <section>
+        <span><i class="fa fa-phone"></i></span>
+        <span>(+91) 9898 9898</span>
+        </section>
+        <section>
+        <span><i class="fa fa-envelope"></i></span>
+        <span>codecollab@gmail.com</span>
+        </section>
+        </div>
+        <span class="border-shape"></span>
+        <div class="bottom_content">
+        <section>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-telegram"></i></a>
+        </section>
+        <section class="footeratags">
+        <a href="../home_page/index.html">Home</a>
+        <a href="../home_page/index.html#about">About us</a>
+        <a href="../Code_Editor/editor.html">Code Editor</a>
+        <a href="../home_page/index.html#about">Member</a>
+        <a href="#">Contact Us</a>
+        </section>
+        </div>
+        <div class="copyright">
+        Copyright © 2024 codecollab team - All rights reserved 
+        </div>
+        </footer>
+
+   
 
 </body>
     <script src="editor.js"></script>

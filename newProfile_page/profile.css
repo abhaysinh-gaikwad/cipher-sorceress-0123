@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 header {
@@ -13,6 +14,9 @@ header {
   position: relative;
   font-family: sans-serif;
   background-color: #25252b;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav {
@@ -22,13 +26,28 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 }
 
+
 .logo {
+  display: flex;
+  align-items: center;
   font-size: 2em;
   cursor: pointer;
-  /* letter-spacing: 2px; */
 }
+.logo a {
+  display: flex;
+  align-items: center; 
+  margin-right: 10px;
+}
+
+
+.logo img {
+  width: 70px; 
+  height: 70px; 
+}
+
 
 .menu a {
   text-decoration: none;
@@ -143,8 +162,6 @@ body {
   color: #fff;
 }
 
-
-
 /* Footer Styles */
 
 .footeratags a {
@@ -195,7 +212,7 @@ body {
 
 /*FOOTER*/
 footer {
-  margin-top: 200px;
+  /* margin-top: 200px; */
   width: 100%;
   background-color: #121619;
   color: #fff;
@@ -285,4 +302,73 @@ footer .bottom_content section {
     margin: 0 5px;
     display: inline-block;
   }
+}
+
+main {
+  padding: 20px;
+}
+.card {
+  width: 300px;
+  background-color: #fff;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  height: 300px;
+  border-radius: 8px;
+}
+
+.card h2 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.card p {
+  color: #777;
+  margin: 10px 0;
+}
+
+.card .price {
+  font-size: 20px;
+  color: #e44d26;
+  font-weight: bold;
+}
+#card-container {
+  /* border: 1px solid black; */
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.button {
+  height: 40px;
+  background-color: #ff2770;
+  border: 1px solid #ff2770;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#cart-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+  left: 15px;
+  top: -40px;
+  height: 20px;
+  font-size: x-small;
+  aspect-ratio: 1;
+  background-color: white;
+  color: red;
 }
