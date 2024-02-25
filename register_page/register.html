@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code-Collab</title>
+    <link rel="shortcut icon" href="../Images/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="register.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -13,7 +14,9 @@
   <body>
     <header>
       <nav>
-        <div class="logo">Code-Collab</div>
+        <div class="logo">
+          <img src="../Images/logo.png">
+          Code-Collab</div>
         <div class="menu">
           <!-- <a href="#"></a> -->
         </div>
@@ -29,21 +32,21 @@
         <div class="curved-shape2"></div>
         <div class="form-box Login">
           <h2 class="animation" style="--D: 0; --S: 21">Login</h2>
-          <form action="#">
+          <form>
             <div class="input-box animation" style="--D: 1; --S: 22">
-              <input type="email" required />
+              <input id="Email" type="email" required />
               <label for="">Username</label>
               <i class="bx bxs-user"></i>
             </div>
 
             <div class="input-box animation" style="--D: 2; --S: 23">
-              <input type="password" required />
+              <input id="password" type="password" required />
               <label for="">Password</label>
               <i class="bx bxs-lock-alt"></i>
             </div>
 
             <div class="input-box animation" style="--D: 3; --S: 24">
-              <button type="submit" class="btn">Login</button>
+              <button id="loginbtn" class="btn">Login</button>
             </div>
 
             <div class="regi-link animation" style="--D: 4; --S: 25">
@@ -64,25 +67,25 @@
           <h2 class="animation" style="--li: 17; --S: 0">Register</h2>
           <form action="#">
             <div class="input-box animation" style="--li: 18; --S: 1">
-              <input type="text" required />
+              <input id="userName" type="text" required />
               <label for="">Username</label>
               <i class="bx bxs-user"></i>
             </div>
 
             <div class="input-box animation" style="--li: 19; --S: 2">
-              <input type="email" required />
+              <input id="email" type="email" required />
               <label for="">Email</label>
               <i class="bx bx-envelope"></i>
             </div>
 
             <div class="input-box animation" style="--li: 20; --S: 3">
-              <input type="password" required />
+              <input id="pass" type="password" required />
               <label for="">Password</label>
               <i class="bx bxs-lock-alt"></i>
             </div>
 
             <div class="input-box animation" style="--li: 21; --S: 4">
-              <button type="submit" class="btn">Register</button>
+              <button id ="handleRegistration" class="btn">Register</button>
             </div>
 
             <div class="regi-link animation" style="--li: 22; --S: 5">
@@ -104,6 +107,12 @@
             Join our platform and start coding with us. Happy coding...!
           </p>
         </div>
+      </div>
+    </div>
+    <div id="loginSuccessModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="loginSuccessMessage"></p>
       </div>
     </div>
   </body>
