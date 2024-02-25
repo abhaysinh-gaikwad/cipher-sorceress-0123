@@ -13,8 +13,8 @@ Frontend | Backend | Fullstack
 
 ## Directory Structure
 my-app/
- - ├─ backend/
- - ├─ frontend/
+ - ├─ Backend/
+ - ├─ Frontend/
  - ├─ ...
 
 ## Video Walkthrough of the project
@@ -37,9 +37,9 @@ List your design desissions & assumptions
 Detailed instructions on how to install, configure, and get the project running. For BE/FS projects, guide the reviewer how to check mongodb schema etc.
 
 ```bash
-npm install my-project
-cd my-project
-npm start
+npm install Backend
+cd Backend
+npm run start
 ```
 
 ## Usage
@@ -58,8 +58,15 @@ If your application relies on external APIs, document them and include any neces
 
 ## API Endpoints
 In case of Backend Applications provide a list of your API endpoints, methods, brief descriptions, and examples of request/response.
-GET /api/items - retrieve all items
-POST /api/items - create a new item
+POST /api/users/register - create a new user
+GET /api/users/checkEmail - retrive all users
+POST /api/users/login - user can login
+GET /api/users/logout - user can logout
+POST /api/code/ - create a new code
+GET /api/code/ - retrive all codes
+PATCH /api/code/id - update the code
+DELETE /api/code/id - delete the code
+
 
 
 ## Technology Stack
