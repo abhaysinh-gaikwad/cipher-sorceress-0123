@@ -7,9 +7,9 @@ Code Collab: Versatile code editor enabling multi-language coding with real-time
 Frontend | Backend | Fullstack
 
 ## Deplolyed App
-- Frontend: https://deployed-site.whatever
-- Backend: https://petpals-2z52.onrender.com
-- Database: https://deployed-site.whatever
+- Frontend: [https://cwcode-collacode-481ac6.netlify.app/]
+- Backend: [https://codecollab-backend-12un.onrender.com]
+- IDEBackend: [https://idemainbackend.onrender.com]
 
 ## Directory Structure
 my-app/
