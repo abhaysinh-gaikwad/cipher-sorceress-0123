@@ -33,12 +33,8 @@ codeRouter.patch('/:id', auth, async(req,res) =>{
     const {id} = req.params
     try{
         const code = await CodeEditor.findOne({_id: id});
-        if(code.userId === req.body.userId){
-            await CodeEditor.findByIdAndUpdate({_id: id}, req.body);
-            res.status(200).send({msg: `The code with id ${id} has been updated`})
-        }else{
-            res.status(400).send({msg: "You are not authorized to update this code"})
-        }
+        await CodeEditor.findByIdAndUpdate({_id: id}, req.body);
+        res.status(200).send({msg: `The code with id ${id} has been updated`});
     }catch(err){
         res.status(400).send({msg: err})
     }

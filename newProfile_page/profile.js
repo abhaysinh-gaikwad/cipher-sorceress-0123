@@ -106,7 +106,8 @@ function createCard(product, index) {
     localStorage.setItem("csscode", product.csscode);
     localStorage.setItem("jscode", product.jscode);
     localStorage.setItem("filename", product.filename);
-    window.location.href = `../Code_Editor/editor.html`;
+    localStorage.setItem("codeid", product._id);
+    window.location.href = `../Code_Editor_ForPatch/editor.html`;
   });
 
   const buttonDelete = document.createElement("button");
