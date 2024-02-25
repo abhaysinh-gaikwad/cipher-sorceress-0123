@@ -17,6 +17,24 @@ body {
   background: #25252b;
 } */
 
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  cursor: pointer;
+}
+.logo a {
+  display: flex;
+  align-items: center; 
+  margin-right: 10px;
+}
+
+
+.logo img {
+  width: 70px; 
+  height: 70px; 
+}
+
 .body-div {
   display: flex;
   justify-content: center;
