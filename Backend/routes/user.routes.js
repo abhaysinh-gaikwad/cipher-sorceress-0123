@@ -31,7 +31,7 @@ userRouter.post('/register', async(req,res) =>{
             if(hash){
                 const user =new UserModel({userName,email,pass:hash})
                 await user.save()
-               return  res.status(200).send({msg:'new user has benn register'})
+               return  res.status(200).send({msg:'new user has benn register', user:userName})
             }else{
                 console.log(err)
                  return res.status(404).send({msg:'error in password hashing process',err:err})

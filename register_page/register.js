@@ -2,6 +2,7 @@ const container = document.querySelector(".container");
 const LoginLink = document.querySelector(".SignInLink");
 const RegisterLink = document.querySelector(".SignUpLink");
 const loginbtn = document.getElementById("loginbtn");
+const handleRegistration = document.getElementById("handleRegistration");
 
 RegisterLink.addEventListener("click", () => {
   container.classList.add("active");
@@ -17,7 +18,19 @@ logo.addEventListener("click", () => {
   window.location.href = "../home_page/index.html";
 });
 
-const handleRegistration = async () => {
+const welocomemsg = "Code with joy, craft with passion. Welcome,";
+const empstring = " ";
+function showLoginSuccessPopup(username, msg) {
+  const modal = document.getElementById("loginSuccessModal");
+  const message = document.getElementById("loginSuccessMessage");
+  message.innerText = `${msg} ${username}!`;
+  modal.style.display = "block";
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 3000); // Close the popup after 3 seconds
+}
+
+const handleRegistrations = async () => {
   let userName = document.getElementById("userName").value;
   let email = document.getElementById("email").value;
   let pass = document.getElementById("pass").value;
@@ -27,19 +40,28 @@ const handleRegistration = async () => {
 
   // Check if any of the fields are blank
   if (!userName || !email || !pass) {
-    alert("Please fill in all the details.");
+    // alert("Please fill in all the details.");
+    showLoginSuccessPopup(empstring, "Please fill in all the details.");
     return; // Stop execution if any field is blank
   }
 
   // Check if email format and domain are valid
   if (!emailRegex.test(email)) {
-    alert("Invalid email format or domain not allowed.");
+    // alert("Invalid email format or domain not allowed.");
+    showLoginSuccessPopup(
+      empstring,
+      "Invalid email format or domain not allowed."
+    );
     return;
   }
 
   // Check if password is at least 8 characters long
   if (pass.length < 8) {
-    alert("Password must be at least 8 characters long.");
+    // alert("Password must be at least 8 characters long.");
+    showLoginSuccessPopup(
+      empstring,
+      "Password must be at least 8 characters long."
+    );
     return;
   }
 
@@ -63,7 +85,8 @@ const handleRegistration = async () => {
       const data = await response.json();
       console.log(data);
 
-      alert("User Successfully Registered");
+      showLoginSuccessPopup(data.user, " Successfully Registered");
+      // alert("User Successfully Registered");
       if (data) {
         // window.location.href = "register.html";
         container.classList.remove("active");
@@ -82,16 +105,11 @@ const handleRegistration = async () => {
   }
 };
 
+handleRegistration.addEventListener("click", (e) => {
+  e.preventDefault();
+  handleRegistrations();
+});
 // Function to show login success popup
-function showLoginSuccessPopup(username) {
-  const modal = document.getElementById("loginSuccessModal");
-  const message = document.getElementById("loginSuccessMessage");
-  message.innerText = `Login successful. Welcome, ${username}!`;
-  modal.style.display = "block";
-  setTimeout(() => {
-    modal.style.display = "none";
-  }, 3000); // Close the popup after 3 seconds
-}
 
 const handleLogin = async () => {
   const email = document.getElementById("Email").value;
@@ -113,23 +131,31 @@ const handleLogin = async () => {
       // Successful login
       localStorage.setItem("token", data.token);
       localStorage.setItem("username", data.username);
-      showLoginSuccessPopup(data.username);
+      showLoginSuccessPopup(data.username, welocomemsg);
+
       setTimeout(() => {
         window.location.href = "../home_page/index.html";
       }, 3000);
     } else {
       // Failed login
       if (response.status === 400) {
-        alert(data.msg); // Display error message from server
+        // alert(data.msg); // Display error message from server
+        showLoginSuccessPopup(data.msg);
       } else if (response.status === 401) {
-        alert("Wrong password."); // Incorrect password
+        // alert("Wrong password."); // Incorrect password
+        showLoginSuccessPopup(empstring, "Wrong password.");
       } else {
-        alert("Login failed. Please try again."); // Other errors
+        // alert("Login failed. Please try again."); // Other errors
+        showLoginSuccessPopup(empstring, "Login failed. Please try again.");
       }
     }
   } catch (error) {
     console.error(error);
-    alert("An error occurred while processing your request.");
+    // alert("An error occurred while processing your request.");
+    showLoginErrorPopup(
+      empstring,
+      "An error occurred while processing your request."
+    );
   }
 };
 
@@ -137,3 +163,8 @@ loginbtn.addEventListener("click", (e) => {
   e.preventDefault();
   handleLogin();
 });
+
+function closePopup() {
+  const modal = document.getElementById("loginSuccessModal");
+  modal.style.display = "none";
+}
