@@ -30,9 +30,6 @@ Features
 -  Code Editor with Language Support: Enable users to write code in various programming languages such as Python, JavaScript, Java, C++, HTML, CSS etc.
 -  User Profile: List the code snippets created by the user.
 
-## design decisions or assumptions
-List your design desissions & assumptions
-
 ## Installation & Getting started
 Detailed instructions on how to install, configure, and get the project running. For BE/FS projects, guide the reviewer how to check mongodb schema etc.
 
