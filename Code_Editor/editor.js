@@ -41,7 +41,9 @@ async function saveCode() {
       toast("Please login first", { type: "error", duration: 3000 });
       setTimeout(() => {
         window.location.href = "../register_page/register.html";
-      }, 3000);     
+      }, 5000);     
+    }else{
+      toast("Your code has been saved", { type: "success", duration: 3000 });
     }
     const res = await fetch("http://localhost:4000/code", {
       method: "POST",
@@ -53,7 +55,6 @@ async function saveCode() {
     });
     const data = await res.json();
     console.log(data);
-    toast("Your code has been saved", { type: "success", duration: 3000 });
   } catch (err) {
     console.log(err);
   }
