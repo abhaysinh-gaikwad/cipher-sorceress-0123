@@ -1,5 +1,6 @@
 const fetchbtn = document.getElementById("fetchbtn");
 const logoutbtn = document.getElementById("logoutbtn");
+const typingbtn =document.getElementById("typingbtn");
 
 const fetchcodes = () => {
   fetch("http://localhost:4000/code", {
@@ -54,4 +55,6 @@ async function logout() {
     }
 }
 
-
+typingbtn.addEventListener('click', () => {
+  window.location.href ="../typing_speed/typing.html";
+})
