@@ -91,7 +91,7 @@
             lang: option.value
         }
         console.log(code)
-        let oData = await fetch("https://ide-backendserver.onrender.com/compile", {
+        let oData = await fetch("https://localhost:8000/compile", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

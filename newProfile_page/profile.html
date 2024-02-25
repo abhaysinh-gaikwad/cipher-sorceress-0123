@@ -3,12 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code Collab</title>
+    <title>Code-Collab</title>
     <link rel="stylesheet" href="./profile.css" />
+    <link rel="shortcut icon" href="../Images/logo.png" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
+    <style>
+      .data-list-wrapper {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 200px;
+
+      }
+      .cardformbe {
+        height: 100px;
+        width: 300px;
+        border: 1px solid wheat;
+        padding: 10px;
+        margin: 30px;
+      }
+      .card-list {
+        display: flex;
+      }
+    </style>
   </head>
 
   <body>
@@ -59,19 +81,38 @@
       </div>
     </div>
 
+    <div class="data-list-wrapper" id="data-list-wrapper">
+      <div class="card-list">
+        <div class="cardformbe" data-id="1">
+          <div class="card-heading">
+            <h2>Card Heading</h2>
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+        </div>
+        <div class="cardformbe" data-id="2">
+          <div class="card-heading">
+            <h2>Card Heading</h2>
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <div class="top_header">
       <section>
       <span><i class="fa fa-map-marker"></i></span>
-      <span>Street, full address, state/province, country, pincode</span>
+      <span>Incubex HSR21, 5th Main Rd, Sector 6, HSR Layout Bengaluru, Karnataka - 560068, Bengaluru, Karnataka 560034</span>
       </section>
       <section>
       <span><i class="fa fa-phone"></i></span>
-      <span>(00) 0000 0000</span>
+      <span>(+91) 9898 9898</span>
       </section>
       <section>
       <span><i class="fa fa-envelope"></i></span>
-      <span>info@websitename.com</span>
+      <span>codecollab@gmail.com</span>
       </section>
       </div>
       <span class="border-shape"></span>
@@ -83,16 +124,15 @@
       <a href="#"><i class="fa fa-telegram"></i></a>
       </section>
       <section class="footeratags">
-      <a href="#">Home</a>
-      <a href="#">About us</a>
-      <a href="#">Order</a>
-      <a href="#">Retail</a>
-      <a href="#">Member</a>
+      <a href="../home_page/index.html">Home</a>
+      <a href="../home_page/index.html#about">About us</a>
+      <a href="../Code_Editor/editor.html">Code Editor</a>
+      <a href="../home_page/index.html#about">Member</a>
       <a href="#">Contact Us</a>
       </section>
       </div>
       <div class="copyright">
-      Copyright © 2021 websitename - All rights reserved 
+      Copyright © 2024 codecollab team - All rights reserved 
       </div>
       </footer>
   </body>
