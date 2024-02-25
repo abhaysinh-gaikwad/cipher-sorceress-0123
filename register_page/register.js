@@ -100,7 +100,7 @@ const handleRegistration = async () => {
 function showLoginSuccessPopup(username) {
     const modal = document.getElementById("loginSuccessModal");
     const message = document.getElementById("loginSuccessMessage");
-    message.innerText = `Login successful. Welcome, ${username}!`;
+    message.innerText = `Code with joy, craft with passion. Welcome, ${username}!`;
 
     modal.style.display = "block";
     setTimeout(() => {
