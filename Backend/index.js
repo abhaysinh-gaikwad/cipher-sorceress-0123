@@ -22,6 +22,8 @@ app.get('/',(req,res) =>{
 
 
 
+
+
 app.listen(process.env.port, async() =>{
     try{
         console.log(`server is running on http://localhost:${process.env.port}`)

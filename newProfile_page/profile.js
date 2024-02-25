@@ -70,15 +70,7 @@ function createCard(product, index) {
   const card = document.createElement('div');
   card.classList.add('card');
 
-  // const img = document.createElement('img');
- 
-  // if (product.imageUrl) {
-  //   img.src = product.imageUrl;
-  //   img.alt = product.name;
-  // } else {
-  //   img.src = 'placeholder_image_url.jpg'; 
-  //   img.alt = 'Placeholder Image';
-  // }
+
 
   const title = document.createElement('h2');
   title.textContent = `Pen ${index}`; // Set title as "Pen 1", "Pen 2", and so on
@@ -96,9 +88,9 @@ function createCard(product, index) {
   buttonEdit.className = "button";
   buttonEdit.innerText = "Edit";
   buttonEdit.addEventListener("click", () => {
-    // Redirect to edit page with the code ID or any necessary details
-    window.location.href = `../Code_Editor/editor.html`;
+    window.location.href = `../patch_code_editor/editor.html?_id=${product._id}`;
   });
+  
 
   const buttonDelete = document.createElement("button");
   buttonDelete.className = "button";

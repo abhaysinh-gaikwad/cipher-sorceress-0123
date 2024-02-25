@@ -28,6 +28,19 @@ codeRouter.get('/', auth, async(req,res) =>{
     }
 });
 
+codeRouter.get('/:codeId',auth,async(req,res) =>{
+    const {codeId} = req.params
+    try{
+        const code =await CodeEditor.findOne({_id: codeId})
+        res.send({code})
+
+    }catch(err){
+        res.send({msg:'error in get the one single notes'})
+
+    }
+
+})
+
 
 codeRouter.patch('/:id', auth, async(req,res) =>{
     const {id} = req.params
@@ -87,7 +100,7 @@ codeRouter.get('/top-users', async (req, res) => {
             { $lookup: { from: "users", localField: "_id", foreignField: "_id", as: "userData" } },
             { $unwind:"$userData" },
             { $project: { _id: 0, userId: "$_id", userName: "$userData.userName", email: "$userData.email", count: 1 } }
-        ]);
+        ]); 
 
         res.json(topUsers);
     } catch (error) {
