@@ -13,6 +13,7 @@ header {
   background-size: cover;
   position: relative;
   font-family: sans-serif;
+  
 }
 
 nav {
@@ -23,6 +24,11 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Background color of the navigation bar */
+  z-index: 1000; 
 }
 
 .logo {

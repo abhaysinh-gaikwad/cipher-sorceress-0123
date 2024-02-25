@@ -39,3 +39,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     usersContainer.innerHTML = '<div class="error-message">Failed to fetch leaderboard data</div>';
   }
 });
+
+
