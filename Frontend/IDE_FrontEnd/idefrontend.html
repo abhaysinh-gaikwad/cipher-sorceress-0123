@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code-Collab</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="../Images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./codemirror-5.65.16/lib/codemirror.css" />
+    <!-- <script src="./codemirror-5.65.16/mode/python/python.js"></script> -->
+
+    <script src="./codemirror-5.65.16/lib/codemirror.js"></script>
+    <script src="./codemirror-5.65.16/mode/clike/clike.js"></script>
+    <link rel="stylesheet" href="./codemirror-5.65.16/theme/3024-night.css" />
+    <link rel="stylesheet" href="../leaderboard/style.css" />
+    <script src="./codemirror-5.65.16/addon/edit/closebrackets.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../Code_Editor/editor.css" />
+
+  </head>
+
+  <body style="background-color: #25252b">
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="../home_page/index.html">
+            <img src="../Images/logo.png" />
+          </a>
+          Code-Collab
+        </div>
+        <div class="menu">
+          <a href="../home_page/index.html">Home</a>
+          <a href="../about_page/index.html">About</a>
+          <a href="../Code_Editor/editor.html">CodeEditor</a>
+          <a href="../IDE_FrontEnd/idefrontend.html">IDE</a>
+          <a href="../leaderboard/index.html">Leaderboard</a>
+        </div>
+        <div class="register">
+          <a href="../register_page/register.html">Login</a>
+        </div>
+      </nav>
+    </header>
+    <div class="row m-4">
+      <div class="col">
+        <div
+          class="top-left-div d-flex justify-content-between mb-2 rounded p-2"
+        >
+          <div class="choose-div col-12 w-25">
+            <label class="visually-hidden" for="inlineFormSelectPref"
+              >Preference</label
+            >
+            <select
+              class="form-select"
+              style="background-color: black; color: #ff2770; border: 1px solid #ff2770;"
+              id="inlineFormSelectPref"
+            >
+              <option selected>Select Language</option>
+              <!-- <option value="Java">Java</option> -->
+              <!-- <option value="Cpp">C++</option> -->
+              <option value="Python">Python</option>
+            </select>
+          </div>
+          <div>
+            <!-- <button
+              type="button"
+              class="btn btn-success"
+              style="background-color: #ff2770; border: none"
+            >
+              Save
+            </button> -->
+            <button
+              type="button"
+              id="run"
+              class="btn btn-success"
+              style="background-color: #ff2770; border: none"
+            >
+              Run
+            </button>
+            <!-- <button
+              type="button"
+              class="btn btn-success"
+              style="background-color: #ff2770; border: none"
+            >
+              Home
+            </button> -->
+          </div>
+        </div>
+        <textarea type="text" id="editor" class="form-control m-8"></textarea>
+      </div>
+    </div>
+    <div class="col d-flex flex-column rounded px-4 m-4">
+      <div class="h-50">
+        <label for="Input" class="text-light mt-4 mb-2"  style="background-color: #25252b">Input</label>
+        <textarea
+          type="text"
+          id="input"
+          class="form-control h-75 bg-black"
+          style="color: #ff2770;border: 1px solid #ff2770;"
+        ></textarea>
+      </div>
+      <div class="h-50">
+        <label for="Output" class="text-light mb-2"  style="background-color: #25252b ">Output</label>
+        <textarea
+          type="text"
+          id="output"
+          class="form-control h-75 bg-black"
+          style="color: #ff2770;border: 1px solid #ff2770;"
+        ></textarea>
+      </div>
+    </div>
+
+    <footer>
+      <div class="top_header">
+        <section>
+          <span><i class="fa fa-map-marker"></i></span>
+          <span
+            >Incubex HSR21, 5th Main Rd, Sector 6, HSR Layout Bengaluru,
+            Karnataka - 560068, Bengaluru, Karnataka 560034</span
+          >
+        </section>
+        <section>
+          <span><i class="fa fa-phone"></i></span>
+          <span>(+91) 9898 9898</span>
+        </section>
+        <section>
+          <span><i class="fa fa-envelope"></i></span>
+          <span>codecollab@gmail.com</span>
+        </section>
+      </div>
+      <span class="border-shape"></span>
+      <div class="bottom_content">
+        <section>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-telegram"></i></a>
+        </section>
+        <section class="footeratags">
+          <a href="../home_page/index.html">Home</a>
+          <a href="../home_page/index.html#about">About us</a>
+          <a href="../Code_Editor/editor.html">Code Editor</a>
+          <a href="../home_page/index.html#about">Member</a>
+          <a href="#">Contact Us</a>
+        </section>
+      </div>
+      <div class="copyright">
+        Copyright © 2024 codecollab team - All rights reserved
+      </div>
+    </footer>
+  </body>
+  <script>
+    var editor = new CodeMirror.fromTextArea(
+      document.getElementById("editor"),
+      {
+        mode: "text/x-c++src",
+        theme: "3024-night",
+        lineNumbers: true,
+        autoCloseBrackets: true,
+      }
+    );
+    var width = window.innerWidth;
+    var input = document.getElementById("input");
+    var output = document.getElementById("output");
+    var run = document.getElementById("run");
+    var option = document.getElementById("inlineFormSelectPref");
+    option.addEventListener("change", function () {
+      if (option.value == "Java") {
+        editor.setOption("mode", "text/x-java");
+      } else if (option.value == "python") {
+        editor.setOption("mode", "text/x-python");
+      } else {
+        editor.setOption("mode", "text/x-c++src");
+      }
+    });
+    var code;
+    run.addEventListener("click", async function () {
+      try {
+        code = {
+          code: editor.getValue(),
+          input: input.value,
+          lang: option.value,
+        };
+        // console.log(code)
+        var oData = await fetch("https://idemainbackend.onrender.com/compile", {
+          // mode: 'no-cors',
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(code),
+        });
+        console.log(oData);
+        var d = await oData.json();
+        output.value = d.output;
+        console.log(d);
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  </script>
+
+  <script src="../home_page/script.js"></script>
+</html>

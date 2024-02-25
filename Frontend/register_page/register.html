@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code-Collab</title>
+    <link rel="shortcut icon" href="../Images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="register.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="../Images/logo.png">
+          Code-Collab</div>
+        <div class="menu">
+          <!-- <a href="#"></a> -->
+        </div>
+        <div class="register">
+          <a href="../home_page/index.html">Home</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="body-div">
+      <div class="container">
+        <div class="curved-shape"></div>
+        <div class="curved-shape2"></div>
+        <div class="form-box Login">
+          <h2 class="animation" style="--D: 0; --S: 21">Login</h2>
+          <form>
+            <div class="input-box animation" style="--D: 1; --S: 22">
+              <input id="Email" type="email" required />
+              <label for="">Username</label>
+              <i class="bx bxs-user"></i>
+            </div>
+
+            <div class="input-box animation" style="--D: 2; --S: 23">
+              <input id="password" type="password" required />
+              <label for="">Password</label>
+              <i class="bx bxs-lock-alt"></i>
+            </div>
+
+            <div class="input-box animation" style="--D: 3; --S: 24">
+              <button id="loginbtn" class="btn">Login</button>
+            </div>
+
+            <div class="regi-link animation" style="--D: 4; --S: 25">
+              <p>
+                Don't have an account ?
+                <a href="#" class="SignUpLink">Sign Up</a>
+              </p>
+            </div>
+          </form>
+        </div>
+        <div class="info-content Login">
+          <h2 class="animation" style="--D: 0; --S: 20">WELCOME BACK</h2>
+          <p class="animation" style="--D: 1; --S: 21">
+            Start coding with us and enjoy your journey...!
+          </p>
+        </div>
+        <div class="form-box Register">
+          <h2 class="animation" style="--li: 17; --S: 0">Register</h2>
+          <form action="#">
+            <div class="input-box animation" style="--li: 18; --S: 1">
+              <input id="userName" type="text" required />
+              <label for="">Username</label>
+              <i class="bx bxs-user"></i>
+            </div>
+
+            <div class="input-box animation" style="--li: 19; --S: 2">
+              <input id="email" type="email" required />
+              <label for="">Email</label>
+              <i class="bx bx-envelope"></i>
+            </div>
+
+            <div class="input-box animation" style="--li: 20; --S: 3">
+              <input id="pass" type="password" required />
+              <label for="">Password</label>
+              <i class="bx bxs-lock-alt"></i>
+            </div>
+
+            <div class="input-box animation" style="--li: 21; --S: 4">
+              <button id ="handleRegistration" class="btn">Register</button>
+            </div>
+
+            <div class="regi-link animation" style="--li: 22; --S: 5">
+              <p>
+                All ready have an account ?
+                <a href="#" class="SignInLink">Sign In</a>
+              </p>
+            </div>
+          </form>
+        </div>
+        <div class="info-content Register">
+          <h2 class="animation" style="--li: 17; --S: 0">
+            WELCOME<span style="font-size: 18px">
+              To
+              <span style="color: rgb(128, 137, 51)"> Code-Collab</span></span
+            >
+          </h2>
+          <p class="animation" style="--li: 18; --S: 1">
+            Join our platform and start coding with us. Happy coding...!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="loginSuccessModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="loginSuccessMessage"></p>
+      </div>
+    </div>
+  </body>
+  <script src="./register.js"></script>
+</html>
