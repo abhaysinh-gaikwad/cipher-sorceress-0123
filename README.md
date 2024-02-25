@@ -12,7 +12,7 @@ Frontend | Backend | Fullstack
 - IDEBackend: [https://idemainbackend.onrender.com]
 
 ## Directory Structure
-my-app/
+cipher-sorceress-0123/
  - ├─ Backend/
  - ├─ Frontend/
  - ├─ ...
