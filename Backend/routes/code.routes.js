@@ -19,7 +19,7 @@ codeRouter.post('/', auth, async(req,res) =>{
 
 codeRouter.get('/', auth, async(req,res) =>{
     try{
-        const code =await CodeEditor.find();
+        const code =await CodeEditor.find( {userId: req.body.userId} );
         res.status(200).send({msg:'all code',code});
     }
     catch(err){

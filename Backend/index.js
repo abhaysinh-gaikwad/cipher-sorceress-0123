@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(cors())
 app.use('/users', userRouter);
 app.use('/code', codeRouter);
-app.use('/idecode', IdecodeRouter);
+app.use('/idecode', IdecodeRouter); 
 
 
 
