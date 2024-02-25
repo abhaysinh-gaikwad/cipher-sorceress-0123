@@ -50,9 +50,6 @@ Provide instructions and examples on how to use your project.
 ## Credentials
 Provide user credentials for autheticated pages
 
-## APIs Used
-If your application relies on external APIs, document them and include any necessary links or references.
-
 ## API Endpoints
 In case of Backend Applications provide a list of your API endpoints, methods, brief descriptions, and examples of request/response.
 POST /api/users/register - create a new user
