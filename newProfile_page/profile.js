@@ -1,7 +1,7 @@
 const fetchbtn = document.getElementById("fetchbtn");
 const logoutbtn = document.getElementById("logoutbtn");
 const logoutuser = document.getElementById("logout");
-
+const profileName = document.getElementById("profile-name");
 
 logoutuser.addEventListener("click", (e) => {
   e.preventDefault();
@@ -43,7 +43,7 @@ const fetchCodes = () => {
   fetch("http://localhost:4000/code", {
     headers: {
       "Content-type": "application/json",
-      "Authorization": `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
   })
     .then((res) => res.json())
@@ -59,7 +59,7 @@ fetchCodes();
 function appendProducts(products) {
   let cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = ""; // Clear previous cards
-  
+  profileName.innerHTML = localStorage.getItem("username");
   products.forEach((product, index) => {
     let card = createCard(product, index + 1); // Add 1 to index for 1-based numbering
     cardContainer.appendChild(card);
@@ -67,28 +67,42 @@ function appendProducts(products) {
 }
 
 function createCard(product, index) {
-  const card = document.createElement('div');
-  card.classList.add('card');
+  const card = document.createElement("div");
+  card.classList.add("card");
 
+  // const img = document.createElement('img');
 
+  // if (product.imageUrl) {
+  //   img.src = product.imageUrl;
+  //   img.alt = product.name;
+  // } else {
+  //   img.src = 'placeholder_image_url.jpg';
+  //   img.alt = 'Placeholder Image';
+  // }
 
-  const title = document.createElement('h2');
-  title.textContent = `Pen ${index}`; // Set title as "Pen 1", "Pen 2", and so on
+  const title = document.createElement("h2");
+  title.textContent = `${product.filename}`; // Set title as "Pen 1", "Pen 2", and so on
 
-  const htmlCode = document.createElement('p');
+  const htmlCode = document.createElement("p");
   htmlCode.textContent = product.htmlcode;
 
-  const cssCode = document.createElement('p');
+  const cssCode = document.createElement("p");
   cssCode.textContent = product.csscode;
 
-  const jsCode = document.createElement('p');
+  const jsCode = document.createElement("p");
   jsCode.textContent = product.jscode;
+
+  const btndiv = document.createElement("div");
+  btndiv.classList.add("button-div");
 
   const buttonEdit = document.createElement("button");
   buttonEdit.className = "button";
   buttonEdit.innerText = "Edit";
+
   buttonEdit.addEventListener("click", () => {
-    window.location.href = `../patch_code_editor/editor.html?_id=${product._id}`;
+    // Redirect to edit page with the code ID or any necessary details
+
+    window.location.href = `../Code_Editor/editor.html`;
   });
   
 
@@ -99,26 +113,24 @@ function createCard(product, index) {
     // Call function to delete code by ID
     deleteCode(product._id);
   });
-
-  card.append( title,buttonEdit, buttonDelete);
+  btndiv.append(buttonEdit, buttonDelete);
+  card.append(title, btndiv);
 
   return card;
 }
 
-function deleteCode(codeId){
-
+function deleteCode(codeId) {
   fetch(`http://localhost:4000/code/${codeId}`, {
-    method: 'DELETE',
+    method: "DELETE",
     headers: {
-        "Content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("token")}`
-    }
-})
-.then(res => res.json())
-.then(data => {
-    alert(data.msg);
-    fetchCodes(); // Refresh notes after deletion
-})
-.catch(err => console.log(err));
+      "Content-type": "application/json",
+      authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      // alert(data.msg);
+      fetchCodes(); // Refresh notes after deletion
+    })
+    .catch((err) => console.log(err));
 }
-
