@@ -23,8 +23,15 @@ document.addEventListener("DOMContentLoaded", function() {
           // If the username doesn't exist, keep the text as "Login"
           loginLink.textContent = "Login";
       }
+
+      // Redirect user to profile page when clicking on username button
+      loginLink.addEventListener("click", (event) => {
+          event.preventDefault(); // Prevent default anchor tag behavior
+          window.location.href = "../newProfile_page/profile.html";
+      });
   } else {
       // If the user is not logged in, keep the text as "Login"
       loginLink.textContent = "Login";
   }
 });
+
