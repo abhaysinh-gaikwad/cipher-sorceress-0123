@@ -76,7 +76,7 @@ label {
 }
 
 
-/* footer */
+
 .footeratags a {
     text-decoration: none;
     outline: none !important;
@@ -125,7 +125,7 @@ label {
   
   /* /FOOTER/ */
   footer {
-    margin-top: 200px;
+    /* margin-top: 200px; */
     width: 100%;
     background-color: #121619;
     color: #fff;
