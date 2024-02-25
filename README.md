@@ -6,7 +6,7 @@ Code Collab: Versatile code editor enabling multi-language coding with real-time
 ## Project Type
 Frontend | Backend | Fullstack
 
-## Deplolyed App
+## Deployed App
 - Frontend: [https://cwcode-collacode-481ac6.netlify.app/]
 - Backend: [https://codecollab-backend-12un.onrender.com]
 - IDEBackend: [https://idemainbackend.onrender.com]
@@ -18,40 +18,53 @@ my-app/
  - ├─ ...
 
 ## Video Walkthrough of the project
-Attach a very short video walkthough of all of the features [ 1 - 3 minutes ]
+Attach a very short video walkthrough of all of the features [ 1 - 3 minutes ]
 
 ## Video Walkthrough of the codebase
-Attach a very short video walkthough of codebase [ 1 - 5 minutes ]
+Attach a very short video walkthrough of the codebase [ 1 - 5 minutes ]
 
 ## Features
 Features
--  Secure Authentication and Login Functionality: Implement secure login mechanisms like password hashing and encryption.
--  Leaderboard Integration: Showcase top performers based on the code creation
--  Code Editor with Language Support: Enable users to write code in various programming languages such as Python, JavaScript, Java, C++, HTML, CSS etc.
+-  Secure Authentication and Login Functionality: Implemented a secure login mechanism using password hashing.
+-  Leaderboard Integration: Showcase top performers based on the code creation.
+-  Code Editor with Language Support: Enable users to write code in JavaScript, HTML, and CSS and view the result simultaneously.
 -  User Profile: List the code snippets created by the user.
+-  Check Typing Speed: User can check their typing speeds.
 
 ## Installation & Getting started
-Detailed instructions on how to install, configure, and get the project running. For BE/FS projects, guide the reviewer how to check mongodb schema etc.
+To run the code-collab backend server 
 
 ```bash
 npm install 
 cd Backend
 npm run start
 ```
-
-## Usage
-Provide instructions and examples on how to use your project.
+To run the IDE backend server 
 
 ```bash
-# Example
+npm install 
+cd Frontend
+cd IDE
+npm run server
+```
+
+
+## Usage
+
+```bash
+Run the frontend deployed app.
+Create your account to login.
+Create your codes and save them as you like.
 ```
 
 
 ## Credentials
-Provide user credentials for autheticated pages
+
+Email:- test@gmail.com
+Password:- Pass@1234
 
 ## API Endpoints
-In case of Backend Applications provide a list of your API endpoints, methods, brief descriptions, and examples of request/response.
+
 - POST /api/users/register - create a new user
 - GET /api/users/checkEmail - retrieve all users
 - POST /api/users/login - user can login
@@ -60,6 +73,7 @@ In case of Backend Applications provide a list of your API endpoints, methods, b
 - GET /api/code/ - retrieve all codes
 - PATCH /api/code/id - update the code
 - DELETE /api/code/id - delete the code
+- POST /api/compile - send a program
 
 
 
@@ -69,7 +83,7 @@ In case of Backend Applications provide a list of your API endpoints, methods, b
 - MongoDB
 - HTML
 - CSS
-- JS
+- JavaScript
 
 
 ## Team Members 
