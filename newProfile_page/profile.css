@@ -1,112 +1,110 @@
-
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  header {
-    width: 100%;
-    /* height: 100vh; */
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    font-family: sans-serif;
-    background-color: #25252b;
-  }
-  
-  nav {
-    width: 100%;
-    height: 100px;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .logo {
-    font-size: 2em;
-    cursor: pointer;
-    /* letter-spacing: 2px; */
-  }
-  
-  .menu a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 20px;
-    position: relative;
-  }
-  
-  .menu a::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    border-bottom: 2px solid #ff2770;
-    transition: 0.4s linear;
-  }
-  .menu a:hover:before {
-    width: 90%;
-  }
-  
-  .register a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: #ff2770;
-    border-radius: 8px;
-    transition: 0.4s linear;
-    margin-right: 10px;
-  }
-  
-  .register a:hover {
-    background: transparent;
-    border: 1px solid #ff2770;
-  }
-  
-  .h-txt {
-    max-width: 650px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-  }
-  
-  .h-txt span {
-    letter-spacing: 5px;
-  }
-  
-  .h-txt h1 {
-    font-size: 3.5em;
-    /* letter-spacing: 10px; */
-  }
-  .h-txt a {
-    text-decoration: none;
-    background: #ff2770;
-    color: white;
-    padding: 10px 20px;
-    letter-spacing: 5px;
-    border-radius: 8px;
-    transition: 0.4s;
-  }
-  
-  .h-txt a:hover {
-    background: transparent;
-    border: 1px solid #ff2770;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-  .user-profile {
-    background-color: #25252b;
+header {
+  width: 100%;
+  /* height: 100vh; */
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  font-family: sans-serif;
+  background-color: #25252b;
+}
 
-  }
+nav {
+  width: 100%;
+  height: 100px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2em;
+  cursor: pointer;
+  /* letter-spacing: 2px; */
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  position: relative;
+}
+
+.menu a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-bottom: 2px solid #ff2770;
+  transition: 0.4s linear;
+}
+.menu a:hover:before {
+  width: 90%;
+}
+
+.register a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #ff2770;
+  border-radius: 8px;
+  transition: 0.4s linear;
+  margin-right: 10px;
+}
+
+.register a:hover {
+  background: transparent;
+  border: 1px solid #ff2770;
+}
+
+.h-txt {
+  max-width: 650px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.h-txt span {
+  letter-spacing: 5px;
+}
+
+.h-txt h1 {
+  font-size: 3.5em;
+  /* letter-spacing: 10px; */
+}
+.h-txt a {
+  text-decoration: none;
+  background: #ff2770;
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 5px;
+  border-radius: 8px;
+  transition: 0.4s;
+}
+
+.h-txt a:hover {
+  background: transparent;
+  border: 1px solid #ff2770;
+}
+
+.user-profile {
+  background-color: #25252b;
+}
 
 .profile .cover-photo img {
   width: 100%;
@@ -123,8 +121,8 @@
 }
 
 body {
-    background-color: #25252b;
-    color: white;
+  background-color: #25252b;
+  color: white;
 }
 .profile .cover-photo {
   position: relative;
@@ -146,40 +144,214 @@ body {
 }
 
 
-#main-box-pen{
-       
-  margin-left: 120px;
- display: flex;
- row-gap: 100px;
- column-gap: 100px;
- flex-wrap: wrap;
- flex-shrink: inherit;
- flex-basis: auto;
- 
+
+/* Footer Styles */
+
+.footeratags a {
+  text-decoration: none;
+  outline: none !important;
+  color: #fff;
 }
 
-.white-pen{
-  transition: transform 0.3s, background-color 0.3s; /* Add transition for transform and background-color */
-  background-color: white;
-
+.border-shape {
+  background: #ff2770 none repeat scroll 0 0;
+  color: #fff;
+  display: block;
+  height: 3px;
+  left: 0;
+  margin: 20px auto;
+  position: relative;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 80px;
 }
-.white-pen:hover {
-  background-color: lightgray; /* Change background color on hover */
-  transform: scale(1.05); /* Apply a slight scale transformation on hover for bulging effect */
+
+.border-shape::before {
+  background: #ff2770 none repeat scroll 0 0;
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 80px;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  width: 100px;
 }
 
-.background-enclose{
- background-color: black;
- width: 550px;
- height: 400px;
- margin: -30px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
-transition: background-color 0.3s; /* Add background color animation */
+.border-shape::after {
+  background: #ff2770 none repeat scroll 0 0;
+  bottom: 0;
+  content: "";
+  height: 1px;
+  margin: 0 auto;
+  position: absolute;
+  right: 80px;
+  text-align: center;
+  top: 1px;
+  width: 100px;
 }
-.background-enclose:hover {
-  background-color: darkslategray;
-  background-image: linear-gradient(to right bottom, rgb(51, 40, 40), rgb(204, 179, 179)); /* Add gradient background on hover */  }
 
-#features-pens a{
- font-family: Georgia, 'Times New Roman', Times, serif;
+/*FOOTER*/
+footer {
+  margin-top: 200px;
+  width: 100%;
+  background-color: #121619;
+  color: #fff;
+}
+
+.top_header {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.top_header section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.top_header span {
+  padding: 0 1rem;
+}
+
+.top_header .fa {
+  color: #ff2770;
+  font-size: 35px;
+}
+
+footer .border-shape {
+  width: 40%;
+}
+
+footer .border-shape::before {
+  width: 100%;
+  left: 120px;
+}
+
+footer .border-shape::after {
+  width: 100%;
+  right: 120px;
+}
+
+footer .bottom_content section {
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: Center;
+}
+
+.bottom_content a {
+  margin: 0 20px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: 0.5s;
+}
+
+.bottom_content a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.copyright {
+  padding: 0.8em 0;
+  background-color: #1e1e1e;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+@media (max-width: 820px) {
+  .top_header {
+    padding: 1rem;
+    display: block;
+  }
+
+  .top_header section {
+    margin: 40px 0;
+    align-items: left;
+    justify-content: left;
+  }
+  footer .bottom_content section {
+    padding: 1rem;
+    display: block;
+  }
+  footer .bottom_content section a {
+    padding: 1rem;
+    font-size: 12px;
+    margin: 0 5px;
+    display: inline-block;
+  }
+}
+
+
+main {
+  padding: 20px;
+}
+.card {
+  width: 300px;
+  background-color: #fff;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  height: 300px;
+  border-radius: 8px;
+}
+
+.card h2 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.card p {
+  color: #777;
+  margin: 10px 0;
+}
+
+.card .price {
+  font-size: 20px;
+  color: #e44d26;
+  font-weight: bold;
+}
+#card-container{
+    /* border: 1px solid black; */
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.button{
+    height: 40px;
+    background-color: teal;
+    border: 1px solid teal;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#cart-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    left: 15px;
+    top: -40px;
+    height: 20px;
+    font-size: x-small;
+    aspect-ratio: 1;
+    background-color: white;
+    color: red;
 }

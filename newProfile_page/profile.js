@@ -1,8 +1,7 @@
 const fetchbtn = document.getElementById("fetchbtn");
 const logoutbtn = document.getElementById("logoutbtn");
 const logoutuser = document.getElementById("logout");
-const typingbtn =document.getElementById("typingbtn");
-const mainBoxPen = document.getElementById("main-box-pen");
+
 
 logoutuser.addEventListener("click", (e) => {
   e.preventDefault();
@@ -40,124 +39,94 @@ async function logout() {
   }
 }
 
-logoutbtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  logout();
-});
-
-
-const fetchcodes = () => {
+const fetchCodes = () => {
   fetch("http://localhost:4000/code", {
     headers: {
       "Content-type": "application/json",
-      authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Authorization": `Bearer ${localStorage.getItem("token")}`,
     },
   })
     .then((res) => res.json())
     .then((data) => {
-      // displayNotes(data.notes);
       console.log(data);
-      data.code.forEach(code => {
-        // Create 
-        var card = createPenCard(code);
-
-        mainBoxPen.appendChild(card);
-    });
+      appendProducts(data.code);
     })
     .catch((err) => console.log(err));
 };
 
-fetchbtn.addEventListener("click", () => {
-  fetchcodes();
-});
+fetchCodes();
 
+function appendProducts(products) {
+  let cardContainer = document.getElementById("card-container");
+  cardContainer.innerHTML = ""; // Clear previous cards
+  
+  products.forEach((product, index) => {
+    let card = createCard(product, index + 1); // Add 1 to index for 1-based numbering
+    cardContainer.appendChild(card);
+  });
+}
 
+function createCard(product, index) {
+  const card = document.createElement('div');
+  card.classList.add('card');
 
-typingbtn.addEventListener('click', () => {
-  window.location.href ="../typing_speed/typing.html";
-})
+  // const img = document.createElement('img');
+ 
+  // if (product.imageUrl) {
+  //   img.src = product.imageUrl;
+  //   img.alt = product.name;
+  // } else {
+  //   img.src = 'placeholder_image_url.jpg'; 
+  //   img.alt = 'Placeholder Image';
+  // }
 
+  const title = document.createElement('h2');
+  title.textContent = `Pen ${index}`; // Set title as "Pen 1", "Pen 2", and so on
 
-function createPenCard(data) {
+  const htmlCode = document.createElement('p');
+  htmlCode.textContent = product.htmlcode;
 
-  var penDiv = document.createElement('div');
-  penDiv.className = 'background-enclose';
-  penDiv.style.marginTop = '-50px';
-  penDiv.style.borderRadius = '12px';
+  const cssCode = document.createElement('p');
+  cssCode.textContent = product.csscode;
 
+  const jsCode = document.createElement('p');
+  jsCode.textContent = product.jscode;
 
-  var innerDiv = document.createElement('div');
-  innerDiv.className = "white-pen";
-  innerDiv.style.border = 'solid black 1px';
-  innerDiv.style.borderRadius = '6px';
-  innerDiv.style.width = '420px';
-  innerDiv.style.height = '220px';
-   innerDiv.style.marginLeft = '40px';
-
-  // HTML box
-  var htmlBox = document.createElement('div');
-  htmlBox.className = 'code-editor';
-  var htmlPre = document.createElement('pre');
-  htmlPre.id = 'html-editor';
-  htmlPre.textContent = data.htmlcode;;
-  htmlBox.appendChild(htmlPre);
-
-  // CSS box
-  var cssBox = document.createElement('div');
-  cssBox.className = 'code-editor';
-  var cssPre = document.createElement('pre');
-  cssPre.id = 'css-editor';
-  cssPre.textContent = data.csscode;
-  cssBox.appendChild(cssPre);
-
-  var jsBox = document.createElement('div');
-  jsBox.className = 'code-editor';
-  var jsPre = document.createElement('pre');
-  jsPre.id = 'js-editor';
-  jsPre.textContent = data.jscode;
-  jsBox.appendChild(jsPre);
-
-  innerDiv.appendChild(htmlBox);
-  innerDiv.appendChild(cssBox);
-  innerDiv.appendChild(jsBox);
-
-  penDiv.appendChild(innerDiv);
-
-  var anchor = document.createElement('a');
-  anchor.href = '../Code_Editor/editor.html'; 
-  anchor.id = 'big-code-page';
-  anchor.appendChild(innerDiv);
-
-  penDiv.appendChild(anchor);
-
-  var problemDiv = document.createElement('div');
-  problemDiv.style.marginLeft = '10px';
-  problemDiv.style.color = 'white';
-  problemDiv.style.textDecoration = 'none';
-
-  var heading = document.createElement('h3');
-  heading.textContent = 'DOM-1 Problem';
-  problemDiv.appendChild(heading);
-
-  var buttons = ['Edit', 'Delete'];
-
-  buttons.forEach(function(btnText) {
-      var button = document.createElement('button');
-      button.classList.add('buttons-like');
-      button.textContent = '0';
-      button.style.marginLeft = '3px';
-      var span = document.createElement('span');
-      span.className = 'material-symbols-outlined';
-      span.textContent = btnText;
-      button.appendChild(span);
-      problemDiv.appendChild(button);
+  const buttonEdit = document.createElement("button");
+  buttonEdit.className = "button";
+  buttonEdit.innerText = "Edit";
+  buttonEdit.addEventListener("click", () => {
+    // Redirect to edit page with the code ID or any necessary details
+    window.location.href = `../Code_Editor/editor.html`;
   });
 
-  penDiv.appendChild(problemDiv);
-  return penDiv;
+  const buttonDelete = document.createElement("button");
+  buttonDelete.className = "button";
+  buttonDelete.innerText = "Delete";
+  buttonDelete.addEventListener("click", () => {
+    // Call function to delete code by ID
+    deleteCode(product._id);
+  });
+
+  card.append( title,buttonEdit, buttonDelete);
+
+  return card;
 }
 
+function deleteCode(codeId){
 
-function createMultiplePens() {
-  createPenCard();
+  fetch(`http://localhost:4000/code/${codeId}`, {
+    method: 'DELETE',
+    headers: {
+        "Content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("token")}`
+    }
+})
+.then(res => res.json())
+.then(data => {
+    alert(data.msg);
+    fetchCodes(); // Refresh notes after deletion
+})
+.catch(err => console.log(err));
 }
+
