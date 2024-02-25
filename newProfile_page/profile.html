@@ -4,24 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code Collab</title>
-    <style>
-        .card {
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          padding: 20px;
-          margin: 10px 0;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="./profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
-  
+
   <body>
-    <h1>Profile Page</h1>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="../home_page/index.html"></a>
+          Code-Collab
+        </div>
+        <div class="menu">
+          <a href="../home_page/index.html">Home</a>
+          <a href="../home_page/index.html#about">About</a>
+          <a href="../leedarbord/index.html">Leadbord</a>
+        </div>
+        <div class="register">
+          <a href="../home_page/index.html" id="logout">Logout</a>
+        </div>
+      </nav>
+    </header>
 
-    <h1>UserName</h1>
+    <section id="user-profile">
+      <div class="profile">
+        <div class="cover-photo">
+          <img src="../Images/fabio-oyXis2kALVg-unsplash.jpg" alt="Cover Image" />
+        </div>
+        <div class="profile-photo">
+          <img src="../assets/nuralum.png" alt="Profile Image" />
+          <h1>NURALUM</h1>
+        </div>
+      </div>
+    </section>
 
-   <button id="logoutbtn">Logout</button>
-   <button>Home page</button>
+    <button id="logoutbtn">Logout</button>
+    <button id="homebtn">
+      <a href="../home_page/index.html">Home page</a>
+    </button>
 
     <div class="card">
       <h2>Card Heading</h2>
@@ -29,14 +52,55 @@
         <button type="button" onclick="editCard()">Edit</button>
         <button type="button" onclick="deleteCard()">Delete</button>
         <button id="fetchbtn">fetchData</button>
+        <button id="typingbtn">typing check</button>
       </div>
     </div>
 
-
+    
+    <footer class="footer">
+      <div class="container">
+          <div class="footer-content">
+              <div class="footer-section about">
+                  <h2 class="logo">Your Company</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  <div class="contact">
+                      <span><i class="fas fa-phone"></i> +1234567890</span>
+                      <span><i class="fas fa-envelope"></i> info@example.com</span>
+                  </div>
+                  <div class="social">
+                      <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                      <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                  </div>
+              </div>
+              <div class="footer-section links">
+                  <h2>Quick Links</h2>
+                  <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Services</a></li>
+                      <li><a href="#">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="footer-section contact-form">
+                  <h2>Contact Us</h2>
+                  <form action="#">
+                      <input type="email" name="email" class="text-input contact-input" placeholder="Your email address">
+                      <textarea name="message" class="text-input contact-input" placeholder="Your message"></textarea>
+                      <button type="submit" class="btn btn-primary">
+                          <i class="fas fa-envelope"></i>
+                          Send
+                      </button>
+                  </form>
+              </div>
+          </div>
+      </div>
+      <div class="footer-bottom">
+          &copy; 2022 Your Company. All rights reserved.
+      </div>
+  </footer>
   </body>
 
-  <script src="profile.js">
-    
-
-  </script>
+  <script src="profile.js"></script>
 </html>

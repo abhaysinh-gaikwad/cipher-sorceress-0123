@@ -21,8 +21,6 @@ app.use("/codemirror-5.65.16", express.static( __dirname + "/codemirror-5.65.16"
 app.use(bodyParser.json());
 
 
-app.use("/codemirror-5.65.16", express.static("C:/Users/Rajat/Desktop/Code Editor/IDE(Main)/codemirror-5.65.16"))
-
 
 
 app.get("/", function (req,res){
@@ -31,8 +29,6 @@ app.get("/", function (req,res){
     })
 
     res.sendFile(__dirname + "/index.html");
-
-    res.sendFile("C:/Users/Rajat/Desktop/Code Editor/IDE(Main)/index.html")
 
 })
 

@@ -71,6 +71,7 @@ codeRouter.get('/allCodes', async(req,res) =>{
 });
 
 
+
 codeRouter.get('/top-users', async (req, res) => {
     try {
         const topUsers = await CodeEditor.aggregate([
@@ -86,6 +87,7 @@ codeRouter.get('/top-users', async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Internal server error' });
+
     }
 });
 
