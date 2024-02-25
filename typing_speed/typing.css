@@ -3,7 +3,8 @@ html{
   }
   
   body{
-    font-family: 'Source Code Pro', monospace;
+    /* font-family: 'Source Code Pro', monospace; */
+    font-family: sans-serif;
     background: #212121;
     color: #52575d;
   }
@@ -123,7 +124,8 @@ html{
     /* position: relative; */
     font-family: sans-serif;
     background-color: #25252b;
-  
+
+
       /* for sticky */
     position: sticky;
     top: 0;
