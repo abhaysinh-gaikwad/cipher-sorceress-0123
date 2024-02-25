@@ -8,7 +8,7 @@ var typed = new Typed(".text", {
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await fetch("http://localhost:4000/code/top-users");
+    const response = await fetch("https://codecollab-backend-12un.onrender.com/code/top-users");
     if (!response.ok) {
       throw new Error("Failed to fetch leaderboard data");
     }

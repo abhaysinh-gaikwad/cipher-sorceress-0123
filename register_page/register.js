@@ -72,7 +72,7 @@ const handleRegistrations = async () => {
   };
 
   try {
-    const response = await fetch("http://localhost:4000/users/register", {
+    const response = await fetch("https://codecollab-backend-12un.onrender.com/users/register", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -117,7 +117,7 @@ const handleLogin = async () => {
   const payload = { email, pass };
 
   try {
-    const response = await fetch("http://localhost:4000/users/login", {
+    const response = await fetch("https://codecollab-backend-12un.onrender.com/users/login", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

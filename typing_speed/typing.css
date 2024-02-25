@@ -13,7 +13,7 @@ html{
     color: #52575d;
   }
   .yellow{
-    color: #ffd369;
+    color: #ff2770;
   }
   .correct{
     color: #29bb89;
@@ -89,7 +89,7 @@ html{
     outline: 0 ;
   }
   a:focus,a:hover{
-    color: #ffd369;
+    color: #ff2770;
     text-decoration: none;
   }
   

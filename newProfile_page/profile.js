@@ -12,7 +12,7 @@ logoutuser.addEventListener("click", (e) => {
 async function logout() {
   try {
     // Make a POST request to the logout endpoint
-    const response = await fetch("http://localhost:4000/users/logout", {
+    const response = await fetch("https://codecollab-backend-12un.onrender.com/users/logout", {
       method: "GET", // or 'POST' depending on how your backend is configured
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`, // Assuming you store the token in localStorage
@@ -40,7 +40,7 @@ async function logout() {
 }
 
 const fetchCodes = () => {
-  fetch("http://localhost:4000/code", {
+  fetch("https://codecollab-backend-12un.onrender.com/code", {
     headers: {
       "Content-type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -124,7 +124,7 @@ function createCard(product, index) {
 }
 
 function deleteCode(codeId) {
-  fetch(`http://localhost:4000/code/${codeId}`, {
+  fetch(`https://codecollab-backend-12un.onrender.com/code/${codeId}`, {
     method: "DELETE",
     headers: {
       "Content-type": "application/json",

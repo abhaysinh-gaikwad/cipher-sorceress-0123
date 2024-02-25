@@ -82,6 +82,25 @@ label {
   cursor: pointer;
 }
 
+#profile-btn {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #ff2770;
+  border-radius: 8px;
+  transition: 0.4s linear;
+  margin-right: 10px;
+  border: 1px solid black;
+}
+
+#profile-btn:hover {
+  background: black;
+  border: 1px solid #ff2770; /* Darker green */
+  cursor: pointer;
+}
+
 .footeratags a {
   text-decoration: none;
   outline: none !important;
@@ -380,4 +399,3 @@ footer .bottom_content section {
     display: inline-block;
   }
 }
-

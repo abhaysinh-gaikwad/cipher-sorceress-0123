@@ -28,6 +28,14 @@ let cssCode = document.getElementById("CSS-code");
 let jsCode = document.getElementById("JS-code");
 let saveasInput = document.getElementById("saveasInput");
 
+let profileBtn = document.getElementById("profile-btn");
+
+profileBtn.innerText = localStorage.getItem("username");
+
+profileBtn.addEventListener("click", () => {
+  window.location.href = "../newProfile_page/profile.html";
+});
+
 htmlCode.value = localStorage.getItem("htmlcode");
 cssCode.value = localStorage.getItem("csscode");
 jsCode.value = localStorage.getItem("jscode");
@@ -56,7 +64,7 @@ async function saveCode() {
       }
     }
     const res = await fetch(
-      `http://localhost:4000/code/${localStorage.getItem("codeid")}`,
+      `https://codecollab-backend-12un.onrender.com/code/${localStorage.getItem("codeid")}`,
       {
         method: "PATCH",
         headers: {
