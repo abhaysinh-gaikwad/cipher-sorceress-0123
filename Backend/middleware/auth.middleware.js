@@ -4,8 +4,8 @@ require('dotenv').config()
 
 
 const auth =async(req,res,next) =>{
-    console.log("i am in auth middleware")
     
+    console.log("i am in auth middleware")
 
     try{
         const token =req.headers.authorization?.split(' ')[1];

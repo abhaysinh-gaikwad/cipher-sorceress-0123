@@ -1,3 +1,5 @@
+const { set } = require("mongoose");
+
 const logo = document.querySelector(".logo");
 
 logo.addEventListener("click", () => {
@@ -35,3 +37,30 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+
+document.getElementById('admin-button').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('popup').style.display = 'block';
+});
+
+document.getElementById('submitCode').addEventListener('click', function() {
+    const secretCode = document.getElementById('secretCode').value;
+
+    if (secretCode === 'YOUR_SECRET_CODE') {
+
+        alert('Admin validated!');
+        setTimeout(() => {
+            window.location.href = "../admin/signup.html";
+        }, 8000);
+       
+    } else {
+        alert('Invalid secret code. Please try again.');
+    }
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
+});
+
+document.getElementById('overlay').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
+});

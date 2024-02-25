@@ -1,6 +1,4 @@
 const mongoose = require('mongoose')
-
-
 const blackSchema =mongoose.Schema({
     blackToken:{
         type:String,

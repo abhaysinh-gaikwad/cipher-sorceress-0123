@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="../about_page/style.css" />
    
-    <style type="text/css"></style>
+    <style type="text/css">
+    </style>
     <title>Code-Collab</title>
   </head>
   <body>
@@ -30,6 +31,12 @@
         </div>
         <div class="register">
           <a href="../register_page/register.html">Login</a>
+          <button id="admin-button">Admin</button>
+          <div class="overlay" id="overlay"></div>
+          <div class="popup" id="popup">
+              <input type="text" id="secretCode" placeholder="Enter Secret Code">
+              <button id="submitCode">Submit</button>
+          </div>
         </div>
       </nav>
 
@@ -167,9 +174,7 @@
                 </h4>
               </div>
               <p>
-                <a href="https://github.com/nuralamdewan2000" target="_blank"
-                  >Nuralam</a
-                >
+                <a href="https://github.com/nuralamdewan2000" target="_blank">Nuralam</a>
                 is a full stack developer.He crafts intuitive user interfaces
                 using HTML, CSS, and JavaScript while delving into the
                 intricacies of server-side logic with Node.js.

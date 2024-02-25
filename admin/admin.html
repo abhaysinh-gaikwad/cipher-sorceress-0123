@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: auto;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .user-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+        .user-stats div {
+            text-align: center;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Admin Dashboard</h1>
+        <div class="user-stats">
+            <div>
+                <h2>Total Users</h2>
+                <p id="userCount" >100</p>
+            </div>
+            <div>
+                <h2>Total Code Editors Used</h2>
+                <p id="codeCount" >500</p>
+            </div>
+            <div>
+                <h2>Other Stats</h2>
+                <p>...</p>
+            </div>
+        </div>
+        <h2>User Database</h2>
+        <table>
+            <thead id="userTable" >
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>John Doe</td>
+                    <td>john.doe@example.com</td>
+                    <td>Admin</td>
+                    <td><button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr> -->
+                <!-- More user rows -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

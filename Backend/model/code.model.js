@@ -3,8 +3,6 @@ const mongoose = require('mongoose');
 const codeSchema = mongoose.Schema({
     htmlcode :{
         type:String,
-        
-
     },
     csscode :{
         type:String,
