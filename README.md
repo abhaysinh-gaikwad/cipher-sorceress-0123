@@ -1,4 +1,4 @@
-# Project Title: Enjoy with Code Collab 
+# Project Title: Code Collab 
 
 <img src="https://github.com/abhaysinh-gaikwad/cipher-sorceress-0123/blob/main/Frontend/assets/homepage.png" alt="Home page image"></img>
 
@@ -85,9 +85,11 @@ Password:- Pass@1234
 - JavaScript : Used for adding interactivity and dynamic behavior to web pages.
 - Node.js    : Server-side JavaScript runtime environment.
 - Express.js : Web application framework for Node.js.
-- MongoDB    :  NoSQL database used for data storage.
+- MongoDB    : NoSQL database used for data storage.
 - bcrypt     : Library for hashing passwords.
 - jwt        : Library for generating JSON Web Tokens.
+- codemirror : Library for creating text edtior.
+- compilex   : Library for compiling python code.
 
 ## Upcoming Features 
 - Admin page
