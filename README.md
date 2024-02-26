@@ -1,4 +1,4 @@
-# Code Collab
+# Project Title: Enjoy with Code Collab 
 
 <img src="https://github.com/abhaysinh-gaikwad/cipher-sorceress-0123/blob/main/Frontend/assets/homepage.png" alt="Home page image"></img>
 
