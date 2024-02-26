@@ -1,7 +1,5 @@
 # Code Collab
 
-![Homepage.png…](https://drive.google.com/file/d/1iDu9QHIB9NM-lLp9JTzdh47ioFvL7o6O/view?usp=sharing)
-
 
 ## Introduction
 Code Collab: Versatile code editor enabling multi-language coding with real-time output visualization for seamless collaborative development.
