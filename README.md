@@ -78,13 +78,19 @@ Password:- Pass@1234
 
 
 ## Technology Stack
-- Node.js
-- Express.js
-- MongoDB
-- HTML
-- CSS
-- JavaScript
+- HTML       : Provides the structure and content of a web page.
+- CSS        : Used to style the visual presentation of HTML elements.
+- JavaScript : Used for adding interactivity and dynamic behavior to web pages.
+- Node.js    : Server-side JavaScript runtime environment.
+- Express.js : Web application framework for Node.js.
+- MongoDB    :  NoSQL database used for data storage.
+- bcrypt     : Library for hashing passwords.
+- jwt        : Library for generating JSON Web Tokens.
 
+## Upcoming Features 
+- Admin page
+- More languages in IDE
+- Badges
 
 ## Team Members 
 ### Abhaysinh Gaikwad(Team Lead )
