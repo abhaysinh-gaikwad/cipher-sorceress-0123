@@ -1,6 +1,9 @@
 # Project Title: Code Collab 
 
+### Home Page
 <img src="https://github.com/abhaysinh-gaikwad/cipher-sorceress-0123/blob/main/Frontend/assets/homepage.png" alt="Home page image"></img>
+### Profile Page
+<img src="https://drive.google.com/file/d/1e8uflwXX1gpbcX2yahppCL32BFYBgCde/view?usp=drive_link" alt="profile page image"></img>
 
 ## Introduction
 Code Collab: Versatile code editor enabling multi-language coding with real-time output visualization for seamless collaborative development.
